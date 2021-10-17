@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/10/14 15:31:35.000.868,=C:\Users\progweb03\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/10/14 15:33:09.000.520,C:\Users\progweb03\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\progweb03\Desktop\treianmento\exercicio1-l3\uprincipal.dfm</Transaction>
+    <Transaction>2021/10/14 15:33:09.000.520,C:\Users\progweb03\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\progweb03\Desktop\treianmento\exercicio1-l3\uprincipal.pas</Transaction>
+    <Transaction>2021/10/14 15:33:17.000.176,C:\Users\progweb03\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\progweb03\Desktop\treianmento\exercicio1-l3\ex01.dproj</Transaction>
+    <Transaction>2021/10/15 09:56:17.000.347,=C:\Users\progweb03\Desktop\treianmento\exercicio1-l3\Unit1.pas</Transaction>
+    <Transaction>2021/10/15 09:57:32.000.519,C:\Users\progweb03\Desktop\treianmento\exercicio1-l3\Unit1.pas=C:\Users\progweb03\Desktop\treianmento\exercicio1-l3\ureposicao.pas</Transaction>
+    <Transaction>2021/10/15 09:57:32.000.519,C:\Users\progweb03\Desktop\treianmento\exercicio1-l3\Unit1.dfm=C:\Users\progweb03\Desktop\treianmento\exercicio1-l3\ureposicao.dfm</Transaction>
+    <Transaction>2021/10/15 12:14:06.000.682,=C:\Users\progweb03\Desktop\treianmento\exercicio1-l3\Unit1.pas</Transaction>
+    <Transaction>2021/10/15 12:15:53.000.075,C:\Users\progweb03\Desktop\treianmento\exercicio1-l3\Unit1.pas=C:\Users\progweb03\Desktop\treianmento\exercicio1-l3\ufinal.pas</Transaction>
+    <Transaction>2021/10/15 12:15:53.000.075,C:\Users\progweb03\Desktop\treianmento\exercicio1-l3\Unit1.dfm=C:\Users\progweb03\Desktop\treianmento\exercicio1-l3\ufinal.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

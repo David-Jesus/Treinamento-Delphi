@@ -1,0 +1,16 @@
+program ex01;
+
+uses
+  Vcl.Forms,
+  uprincipal in 'uprincipal.pas' {frExercicio},
+  ureposicao in 'ureposicao.pas' {frReposicao};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrExercicio, frExercicio);
+  Application.CreateForm(TfrReposicao, frReposicao);
+  Application.Run;
+end.

@@ -1,0 +1,58 @@
+unit ufinal;
+
+interface
+
+uses
+Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TfrProvaFinal = class(TForm)
+    edNotaFinal: TLabeledEdit;
+    LabeledEdit2: TLabeledEdit;
+    btMedia: TButton;
+    procedure btMediaClick(Sender: TObject);
+  private
+    { Private declarations }
+
+     Fmedia         ,
+     FNotaFinal     ,
+     FMediaReposicao: currency;
+  public
+    { Public declarations }
+//    constructor Create(prMediaReposicao: Currency);
+
+    property NotaReposicao: Currency read FMediaReposicao write FMediaReposicao;
+  end;
+
+var
+  frProvaFinal: TfrProvaFinal;
+
+implementation
+
+{$R *.dfm}
+
+
+{constructor TfrProvaFinal.Create(prMediaReposicao: Currency);
+begin
+  inherited create(nil);
+
+  FMediaReposicao:= prMediaReposicao;
+end;    }
+
+procedure TfrProvaFinal.btMediaClick(Sender: TObject);
+begin
+ if edNotaFinal.Text = '' then
+     begin
+       MessageDlg('Favor informar a nota de reposição!', mtWarning, [mbOk], 0);
+       exit;
+ end;
+
+ try
+   ShowMessage(FloatToStr(FMediaReposicao));
+ except on E: Exception do
+ end;
+
+end;
+
+end.
