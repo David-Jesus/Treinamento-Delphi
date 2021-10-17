@@ -20,11 +20,12 @@ var
   wDataFinal  : TDateTime;
 
 begin
-  wDataInicial := EncodeDateTime(2020, 1, 12, 9, 10, 15, 0);
+  wDataInicial := EncodeDateTime(2021, 1, 12, 9, 10, 15, 0);
   wDataFinal   := EncodeDateTime(2021, 1, 12, 9, 10, 15, 0);
   wAno          := YearOf(wDataInicial);
   wDia         := 13;
   wMes         := 1;
+  wContador    := 0;
 
   // vamos obter a quantidade de dias para o
 
@@ -46,7 +47,7 @@ begin
       begin
         while wMes <= 12 do
           begin
-            Writeln('Mês ' + IntToStr(wMes) + ' ' + Semana[DayOfTheWeek(EncodeDateTime(YearOf(wDataInicial), wMes, wDia, 0, 0, 0, 0))]);
+//            Writeln('Mês ' + IntToStr(wMes) + ' ' + Semana[DayOfTheWeek(EncodeDateTime(YearOf(wDataInicial), wMes, wDia, 0, 0, 0, 0))]);
             if AnsiCompareStr(Semana[DayOfTheWeek(EncodeDateTime(YearOf(wDataInicial), wMes, wDia, 0, 0, 0, 0))],'Sexta-Feira') = 0 then
             wContador := wContador + 1;
 
@@ -57,7 +58,7 @@ begin
       wDataInicial := EncodeDateTime(wAno, 1, 12, 9, 10, 15, 0);
       wMes := 1;
       end;
-      Writeln(AnsiCompareStr('David','david') + ' Contador: ' + IntToStr(wContador));
+      Writeln( ' Contador: ' + IntToStr(wContador));
 //    while wMes <= 12 do
 //      begin
 //        Writeln('Mês ' + IntToStr(wMes) + ' ' + Semana[DayOfTheWeek(EncodeDateTime(2020, wMes, wDia, 0, 0, 0, 0))]);
