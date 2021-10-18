@@ -11,18 +11,18 @@ uses
 Const
  Semana: array[1..7] of string = ('Segunda-Feira','Terça-Feira','Quarta-Feira','Quinta-Feira','Sexta-Feira','Sabado', 'Domingo');
 var
-  wDia        ,
-  wMes        ,
-  wAno        ,
-  wContador   ,
-  dias_ano    : Integer;
+  wDia     ,
+  wMes     ,
+  wAno     ,
+  wContador,
+  dias_ano : Integer;
   wDataInicial,
   wDataFinal  : TDateTime;
 
 begin
   wDataInicial := EncodeDateTime(1900, 1, 12, 9, 10, 15, 0);
   wDataFinal   := EncodeDateTime(2021, 1, 12, 9, 10, 15, 0);
-  wAno         := YearOf(wDataInicial);
+  wAno          := YearOf(wDataInicial);
   wDia         := 13;
   wMes         := 1;
   wContador    := 0;

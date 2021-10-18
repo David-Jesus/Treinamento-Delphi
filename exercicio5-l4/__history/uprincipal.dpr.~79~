@@ -20,7 +20,7 @@ var
   wDataFinal  : TDateTime;
 
 begin
-  wDataInicial := EncodeDateTime(2021, 1, 12, 9, 10, 15, 0);
+  wDataInicial := EncodeDateTime(2000, 1, 12, 9, 10, 15, 0);
   wDataFinal   := EncodeDateTime(2021, 1, 12, 9, 10, 15, 0);
   wAno          := YearOf(wDataInicial);
   wDia         := 13;
@@ -34,7 +34,11 @@ begin
         while wMes <= 12 do
           begin
             if AnsiCompareStr(Semana[DayOfTheWeek(EncodeDateTime(YearOf(wDataInicial), wMes, wDia, 0, 0, 0, 0))],'Sexta-Feira') = 0 then
-            wContador := wContador + 1;
+               begin
+                 wContador := wContador + 1;
+                 Writeln('Data: ' + DateToStr(EncodeDateTime(YearOf(wDataInicial), wMes, wDia, 0, 0, 0, 0)));
+               end;
+
 
             wMes := wMes + 1;
           end;

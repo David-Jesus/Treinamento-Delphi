@@ -27,45 +27,27 @@ begin
   wMes         := 1;
   wContador    := 0;
 
-  // vamos obter a quantidade de dias para o
-
-  // ano de 2010
-
-
-
-  // exibe o resultado
-
-
   try
     { TODO -oUser -cConsole Main : Insert code here }
-//    dias_ano := DaysInAYear(ano);
-//    Writeln('O ano informado contém ' + IntToStr(31 mod 4));
-//    Writeln('Dia mês ' + Semana[DayOfTheWeek(Now)]);
-//    Writeln('Dia mês ' + Semana[DayOfTheWeek(EncodeDateTime(2010, 1, 12, 9, 10, 15, 0))]);
-//    Writeln('Dia mês ' + IntToStr(DayOf(EncodeDateTime(2010, 1, 12, 9, 10, 15, 0))));
     while wDataInicial <= wDataFinal do
       begin
         while wMes <= 12 do
           begin
-            Writeln('Mês ' + IntToStr(wMes) + ' ' + Semana[DayOfTheWeek(EncodeDateTime(YearOf(wDataInicial), wMes, wDia, 0, 0, 0, 0))]);
             if AnsiCompareStr(Semana[DayOfTheWeek(EncodeDateTime(YearOf(wDataInicial), wMes, wDia, 0, 0, 0, 0))],'Sexta-Feira') = 0 then
-            wContador := wContador + 1;
+               begin
+                 wContador := wContador + 1;
+                 Writeln('Data: ' + DateToStr(EncodeDateTime(YearOf(wDataInicial), wMes, wDia, 0, 0, 0, 0)));
+               end;
+
 
             wMes := wMes + 1;
           end;
-//      Writeln('Dat 1: ' + DateToStr(wDataInicial) + 'Data 2: ' + DateToStr(wDataFinal));
       wAno := wAno + 1;
       wDataInicial := EncodeDateTime(wAno, 1, 12, 9, 10, 15, 0);
       wMes := 1;
       end;
       Writeln( ' Contador: ' + IntToStr(wContador));
-//    while wMes <= 12 do
-//      begin
-//        Writeln('Mês ' + IntToStr(wMes) + ' ' + Semana[DayOfTheWeek(EncodeDateTime(2020, wMes, wDia, 0, 0, 0, 0))]);
-//        wMes := wMes + 1;
-//      end;
-//      Writeln('Dat 1: ' + DateToStr(wDataInicial) + 'Data 2: ' + DateToStr(wDataFinal));
-    Readln; //serve para deixa o console aberto até que seja clicado qualquer tecla
+    Readln; //Deixa o console aberto até que seja clicado qualquer tecla
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);
@@ -74,5 +56,6 @@ begin
 
 
 end.
+
 
 
