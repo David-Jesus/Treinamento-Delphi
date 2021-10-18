@@ -1,0 +1,34 @@
+unit uValidaCaractere;
+
+interface
+
+function operadorValido(const wCaractere: Char) : String;
+
+implementation
+
+
+
+uses SysUtils;
+
+var
+  wCaractere: Char; //Variável que receberá o caractere informado pelo usuário
+  wResultado : Boolean;
+
+function operadorValido(const wCaractere : Char) : String;
+  begin
+    if wCaractere in ['A'..'Z'] then
+       begin
+         wResultado := (wCaractere <> '') and ((wCaractere = 'A') or (wCaractere = 'E') or (wCaractere = 'I') or (wCaractere = 'O') or (wCaractere = 'U'));
+         if wResultado then
+            Result := 'É uma letra do tipo: Vogal'
+         else
+           Result := 'É uma letra do tipo: Consoante';
+       end
+    else
+      if wCaractere in ['0'..'9'] then
+         Result := 'O caractere infromado é um: Número';
+      Result := 'Não é letra';
+
+end;
+
+end.
