@@ -13,22 +13,24 @@ File_10=TSourceModule,'c:\program files (x86)\embarcadero\studio\17.0\SOURCE\VCL
 File_11=TSourceModule,'C:\Users\progweb03\Documents\David\testes_delphi\Unit1.pas',0,1,1,106,9,0,0,,
 
 [Modules]
-Module0=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l2\upricipal.pas
-Module1=default.htm
+Module0=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l2\uValidaCaractere.pas
+Module1=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l2\upricipal.pas
 Count=2
 EditWindowCount=1
+
+[C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l2\uValidaCaractere.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
 
 [C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l2\upricipal.pas]
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
-[default.htm]
-ModuleType=TURLModule
-
 [EditWindow0]
 ViewCount=2
-CurrentEditView=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l2\upricipal.pas
+CurrentEditView=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l2\uValidaCaractere.pas
 View0=0
 View1=1
 PercentageSizes=1
@@ -61,19 +63,26 @@ BottomMiddlePanelClients=DockSite0,GraphDrawingModel
 BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E67566965779F1D00000000000002F206000000000000FFFFFFFF
 
 [View0]
-CustomEditViewType=TWelcomePageView
-WelcomePageURL=bds:/default.htm
-
-[View1]
 CustomEditViewType=TEditView
 Module=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l2\upricipal.pas
-CursorX=43
-CursorY=21
-TopLine=1
+CursorX=42
+CursorY=52
+TopLine=24
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l2\upricipal.pas
+
+[View1]
+CustomEditViewType=TEditView
+Module=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l2\uValidaCaractere.pas
+CursorX=12
+CursorY=34
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l2\uValidaCaractere.pas
 
 [Watches]
 Count=0
@@ -302,8 +311,8 @@ SplitPos=111
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Name,
-ExpandedItems=Anchors=0,BorderIcons=0,Constraints=0,Font=1,GlassFrame=0,HorzScrollBar=0,LiveBindings=0,"LiveBindings Designer=0",Margins=0,Padding=0,StyleElements=0,Touch=0,VertScrollBar=0,BevelEdges=0,EditLabel=1,EditLabel.Font=0,ImageMargins=0,EditLabel.LiveBindings=0,"EditLabel.LiveBindings Designer=0",EditLabel.Margins=0,EditLabel.Touch=0,Font.Style=0
+SelectedItem=Font.Style.fsBold,
+ExpandedItems=Anchors=0,BorderIcons=0,Constraints=0,Font=1,GlassFrame=0,HorzScrollBar=0,LiveBindings=0,"LiveBindings Designer=0",Margins=0,Padding=0,StyleElements=1,Touch=0,VertScrollBar=0,BevelEdges=0,EditLabel=1,EditLabel.Font=0,ImageMargins=0,EditLabel.LiveBindings=0,"EditLabel.LiveBindings Designer=0",EditLabel.Margins=0,EditLabel.Touch=0,Font.Style=1,"LiveBindings Designer.Element Layers=0"
 
 [frmDesignPreview]
 PercentageSizes=1
