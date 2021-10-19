@@ -33,7 +33,7 @@ begin
   WriteLn('');
   while True do
     begin
-        Write('Digite um valor maior que "0" (zero): ');
+        Write('Digite um valor maior que "0" (zero):');
         Readln(wEntrada);
          if (wTentativas = 1) or (wEntrada = '0') then
             begin

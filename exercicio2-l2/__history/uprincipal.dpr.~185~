@@ -18,7 +18,7 @@ var
   wQtdVezesMenor  ,
   wTentativas     : Integer;
   wMedia          : Currency;
-  wNumeros        : array[0..3] of Integer;
+  wNumeros        : array[0..4] of Integer;
 
 
 begin
@@ -26,29 +26,33 @@ begin
   wContador   := 0;
   wMenor      := 0;
   wMaior      := 0;
-  Writeln('|-----------------------------------------------------------------------|');
-  Writeln('|Sistema Para calcular a média e mostrar o maior/menor número informado |');
-  Writeln('|Digite 0 (zero) para calcular                                          |');
-  Writeln('|-----------------------------------------------------------------------|');
+  Writeln('|-------------------------------------------------------------------------------------|');
+  Writeln('|Sistema Para calcular a média, mostrar o maior e menor número de 5 valores informados|');
+  Writeln('|Digite "0" (zero) a qualquer momento para sair                                       |');
+  Writeln('|-------------------------------------------------------------------------------------|');
   WriteLn('');
   while True do
     begin
-        Write('Entre com o valor maior que 0: ');
+        Write('Digite um valor maior que "0" (zero): ');
         Readln(wEntrada);
-         if wTentativas = 1 then
+         if (wTentativas = 1) or (wEntrada = '0') then
             begin
-              Writeln('Você excedeu o número máximo de tentativas, programa finalizado.');
+              if wTentativas = 1 then
+                 Writeln('Você excedeu o número máximo de tentativas, programa finalizado.')
+              else
+                Writeln('Programa finalizado.');
+
               Writeln('Pressione Enter para sair');
               Readln;
               Exit;
             end;
 
-         if TryStrToFloat(wEntrada, wTeste)then
+         if (TryStrToFloat(wEntrada, wTeste)) and (StrToInt(wEntrada) > 0) then
             begin
               wNumeros[wContador] := StrToInt(wEntrada);
               wTentativas := 4;
               wContador := wContador + 1;
-              if (wEntrada = '0') or (wContador = Length(wNumeros)) then
+              if (wContador = Length(wNumeros)) then
                  Break;
             end
          else
@@ -66,12 +70,12 @@ begin
     wQtdVezesMaior := 0;
     wMaior := wNumeros[0];
     wMenor := wNumeros[0];
+
     while wContador <= (Length(wNumeros) -1 ) do
       begin
         if wNumeros[wContador] > wMaior then
            begin
-//            if wNumeros[wContador] = wMaior then
-                wMaior := wNumeros[wContador];
+             wMaior := wNumeros[wContador];
            end
         else
           if wNumeros[wContador] < wMenor then
@@ -93,15 +97,15 @@ begin
           wContador := wContador + 1;
         end;
       
-    wMedia := wSoma / Length(wNumeros);
+  wMedia := wSoma / Length(wNumeros);
 
-    WriteLn(''); //Pula uma linha dentro da janela console
-    Writeln('Menor número iformado: ' + IntToStr(wMenor) + ' foi informado: ' + IntToStr(wQtdVezesMenor) + '  vezes');
-    Writeln('Maior número iformado: ' + IntToStr(wMaior) + ' foi informado: ' + IntToStr(wQtdVezesMaior) + '  vezes');
-    Writeln;
+  WriteLn(''); //Pula uma linha dentro da janela console
+  Writeln('Menor número iformado: ' + IntToStr(wMenor) + '   foi informado: ' + IntToStr(wQtdVezesMenor) + '  vezes');
+  Writeln('Maior número iformado: ' + IntToStr(wMaior) + '   foi informado: ' + IntToStr(wQtdVezesMaior) + '  vezes');
+  Writeln;
 
-    Writeln('Soma dos valores informados: ' + IntToStr(wSoma));
-    Writeln('Resultado da média do números informados: ' + CurrToStr(wMedia));
-    WriteLn('Pressione Enter para sair');
-    ReadLn;
+  Writeln('Soma dos valores informados: ' + IntToStr(wSoma));
+  Writeln('Resultado da média do números informados: ' + CurrToStr(wMedia));
+  WriteLn('Pressione Enter para sair');
+  ReadLn;
 end.
