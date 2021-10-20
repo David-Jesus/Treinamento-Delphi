@@ -97,7 +97,7 @@ begin
              Writeln('Número de Empates: ' + IntToStr(wEmpates));
              Writeln('');
 
-             if (wNrVitoriasTimeUm > wNrVitoriasTimeDois) then
+             if (wNrVitoriasTimeUm > wNrGolsTimeDois) then
                 Writeln('O Inter venceu o maior número de grenais')
              else
                if (wNrVitoriasTimeDois > wNrVitoriasTimeUm) then
