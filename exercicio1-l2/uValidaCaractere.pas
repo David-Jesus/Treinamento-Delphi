@@ -6,8 +6,6 @@ function validaCaractere(const prCaractere: Char) : String;
 
 implementation
 
-
-
 uses SysUtils;
 
 var
@@ -28,6 +26,6 @@ function validaCaractere(const prCaractere : Char) : String;
          Result := 'O caractere informado é um número'
       else
          Result := 'O caractere informado é um caractere especial'
-end;
+  end;
 
 end.
