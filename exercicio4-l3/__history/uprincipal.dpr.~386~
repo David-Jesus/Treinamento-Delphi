@@ -32,6 +32,7 @@ begin
   wValor   := FloatToStr(trunc(wValorLido));
   wCentavo := round(frac(wValorLido) * 100);
   try
+    { TODO -oUser -cConsole Main : Insert code here }
     if (StrToFloat(wValor) <= 9999.99) and (StrToFloat(wValor) > 0) then
        begin
           if Length(wValor) = 1 then
