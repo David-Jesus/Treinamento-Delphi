@@ -1,0 +1,34 @@
+unit uValidaCaractere;
+
+interface
+
+function validaCaractere(const prCaractere: Char) : String;
+
+implementation
+
+
+
+uses SysUtils;
+
+var
+  prCaractere: Char; //Variável que receberá o caractere informado pelo usuário
+  wResultado : Boolean;
+
+function validaCaractere(const prCaractere : Char) : String;
+  begin
+    if prCaractere in ['A'..'Z'] then
+       begin
+         wResultado := (prCaractere <> '') and ((prCaractere = 'A') or (prCaractere = 'E') or (prCaractere = 'I') or (prCaractere = 'O') or (wCaractere = 'U'));
+         if wResultado then
+            Result := 'O caractere informado é do tipo: Vogal'
+         else
+           Result := 'O caractere informado é do tipo: Consoante';
+       end
+    else
+      if prCaractere in ['0'..'9'] then
+         Result := 'O caractere informado é um número'
+      else
+         Result := 'O caractere informado é um caractere especial'
+end;
+
+end.

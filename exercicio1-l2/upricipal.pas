@@ -28,11 +28,9 @@ implementation
 
 uses uValidaCaractere;
 
-
-
 procedure TfrExercicio1.btVerificaClick(Sender: TObject);
-  var
-    wCaracter : Char;
+var
+  wCaracter : Char;
 begin
   lbResultado.Visible := False;
   if edCaracter.Text = '' then
@@ -41,7 +39,6 @@ begin
        Exit;
      end;
 
-
   try
     wCaracter           := edCaracter.Text[1];
     lbResultado.Caption := validaCaractere(wCaracter);
@@ -49,7 +46,5 @@ begin
   except on E: Exception do
   end;
 end;
-
-
 
 end.
