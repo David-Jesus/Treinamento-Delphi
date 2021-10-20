@@ -25,7 +25,7 @@ begin
   Writeln('Digite um valor acima de 0 (zero): ' );
   Readln(wValorLido);
 
-  if (wValorLido <= 0) then
+  if wValorLido <= 0 then
      begin
        Writeln('Informe um valor maior que 0 (zero)!');
        Writeln('Pressione Enter para sair');
@@ -93,9 +93,8 @@ begin
     Writeln('Moedas de---0.50: ' + IntToStr(wMoedasCinquenta));
     Writeln('Moedas de---0.25: ' + IntToStr(wMoedasVinteCinco));
     Writeln('Moedas de---0.10: ' + IntToStr(wMoedasDez));
-    Writeln('Moedas de---0.05: ' + IntToStr(wMoedasCinco));
     Writeln('Moedas de---0.01: ' + IntToStr(wMoedasUmCentavo));
-    Writeln('Digite Enter para sair');
+    Writeln('Diite Enter para sair');
     Readln;
 
   except

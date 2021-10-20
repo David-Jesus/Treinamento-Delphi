@@ -95,7 +95,7 @@ begin
     Writeln('Moedas de---0.10: ' + IntToStr(wMoedasDez));
     Writeln('Moedas de---0.05: ' + IntToStr(wMoedasCinco));
     Writeln('Moedas de---0.01: ' + IntToStr(wMoedasUmCentavo));
-    Writeln('Digite Enter para sair');
+    Writeln('Diite Enter para sair');
     Readln;
 
   except
