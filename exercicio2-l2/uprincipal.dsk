@@ -15,9 +15,13 @@ File_12=TSourceModule,'c:\program files (x86)\embarcadero\studio\17.0\SOURCE\VCL
 File_13=TSourceModule,'C:\Users\progweb03\Documents\David\testes_delphi\Unit1.pas',0,1,1,106,9,0,0,,
 
 [Modules]
-Module0=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio2-l2\uvalidacao.pas
-Count=1
+Module0=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio2-l2\uprincipal.dproj
+Module1=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio2-l2\uvalidacao.pas
+Count=2
 EditWindowCount=1
+
+[C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio2-l2\uprincipal.dproj]
+ModuleType=TBaseProject
 
 [C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio2-l2\uvalidacao.pas]
 ModuleType=TSourceModule
@@ -25,9 +29,10 @@ FormState=0
 FormOnTop=0
 
 [EditWindow0]
-ViewCount=1
-CurrentEditView=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio2-l2\uvalidacao.pas
+ViewCount=2
+CurrentEditView=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio2-l2\uprincipal.dpr
 View0=0
+View1=1
 PercentageSizes=1
 Create=1
 Visible=1
@@ -60,13 +65,24 @@ BottomMiddelPanelData=0000080001020200000009000000446F636B5369746530100000004772
 [View0]
 CustomEditViewType=TEditView
 Module=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio2-l2\uvalidacao.pas
-CursorX=127
+CursorX=34
 CursorY=1
 TopLine=1
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio2-l2\uvalidacao.pas
+
+[View1]
+CustomEditViewType=TEditView
+Module=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio2-l2\uprincipal.dpr
+CursorX=46
+CursorY=52
+TopLine=37
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio2-l2\uprincipal.dpr
 
 [Watches]
 Count=0
@@ -107,14 +123,14 @@ Create=1
 Visible=1
 Docked=0
 State=2
-Left=146
-Top=269
+Left=7849
+Top=1163
 Width=8932
-Height=8519
+Height=7000
 MaxLeft=-5
 MaxTop=-10
 MaxWidth=8932
-MaxHeight=8519
+MaxHeight=7000
 ClientWidth=10000
 ClientHeight=9779
 BottomPanelSize=8898

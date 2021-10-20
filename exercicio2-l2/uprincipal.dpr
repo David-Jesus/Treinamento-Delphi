@@ -8,7 +8,7 @@ uses
   System.SysUtils;
 
 var
-  wTeste : Double;
+  wTeste          : Double;
   wEntrada        : String; //Variável que receberá a entrada do teclado do usuário
   wSoma           ,
   wMaior          ,
@@ -33,70 +33,70 @@ begin
   WriteLn('');
   while True do
     begin
-        Write('Digite um valor maior que "0" (zero):');
-        Readln(wEntrada);
-         if (wTentativas = 1) or (wEntrada = '0') then
-            begin
-              if wTentativas = 1 then
-                 Writeln('Você excedeu o número máximo de tentativas, programa finalizado.')
-              else
-                Writeln('Programa finalizado.');
+      Write('Digite um valor maior que "0" (zero):');
+      Readln(wEntrada);
+      if (wTentativas = 1) or (wEntrada = '0') then
+         begin
+           if wTentativas = 1 then
+              Writeln('Você excedeu o número máximo de tentativas, programa finalizado.')
+           else
+             Writeln('Programa finalizado.');
 
-              Writeln('Pressione Enter para sair');
-              Readln;
-              Exit;
-            end;
+           Writeln('Pressione Enter para sair');
+           Readln;
+           Exit;
+         end;
 
-         if (TryStrToFloat(wEntrada, wTeste)) and (StrToInt(wEntrada) > 0) then
-            begin
-              wNumeros[wContador] := StrToInt(wEntrada);
-              wTentativas := 4;
-              wContador := wContador + 1;
-              if (wContador = Length(wNumeros)) then
-                 Break;
-            end
-         else
-           begin
-             wTentativas := wTentativas - 1;
-             WriteLn('');
-             Write('Digite apenas números positivos, você tem: ' + IntToStr(wTentativas) + ' tentativas');
-             Writeln;
-             WriteLn('');
-           end;
+      if (TryStrToFloat(wEntrada, wTeste)) and (StrToInt(wEntrada) > 0) then
+         begin
+           wNumeros[wContador] := StrToInt(wEntrada);
+           wTentativas := 4;
+           wContador := wContador + 1;
+           if (wContador = Length(wNumeros)) then
+              Break;
+         end
+      else
+        begin
+          wTentativas := wTentativas - 1;
+          WriteLn('');
+          Write('Digite apenas números positivos, você tem: ' + IntToStr(wTentativas) + ' tentativas');
+          Writeln;
+          WriteLn('');
+        end;
+    end;
+
+  wContador := 0;
+  wQtdVezesMenor := 0;
+  wQtdVezesMaior := 0;
+  wMaior := wNumeros[0];
+  wMenor := wNumeros[0];
+
+  while wContador <= (Length(wNumeros) -1 ) do
+    begin
+      if wNumeros[wContador] > wMaior then
+         begin
+           wMaior := wNumeros[wContador];
+         end
+      else
+         if wNumeros[wContador] < wMenor then
+            wMenor := wNumeros[wContador];
+
+      wContador := wContador + 1;
     end;
 
     wContador := 0;
-    wQtdVezesMenor := 0;
-    wQtdVezesMaior := 0;
-    wMaior := wNumeros[0];
-    wMenor := wNumeros[0];
-
+    wSoma     := 0;
     while wContador <= (Length(wNumeros) -1 ) do
       begin
-        if wNumeros[wContador] > wMaior then
-           begin
-             wMaior := wNumeros[wContador];
-           end
-        else
-          if wNumeros[wContador] < wMenor then
-             wMenor := wNumeros[wContador];
+        wSoma := wSoma + wNumeros[wContador];
+        if wNumeros[wContador] = wMaior then
+           wQtdVezesMaior := wQtdVezesMaior + 1;
+        if wNumeros[wContador]  = wMenor then
+           wQtdVezesMenor := wQtdVezesMenor + 1;
 
         wContador := wContador + 1;
       end;
 
-      wContador := 0;
-      wSoma     := 0;
-      while wContador <= (Length(wNumeros) -1 ) do
-        begin
-          wSoma := wSoma + wNumeros[wContador];
-          if wNumeros[wContador] = wMaior then
-             wQtdVezesMaior := wQtdVezesMaior + 1;
-          if wNumeros[wContador]  = wMenor then
-             wQtdVezesMenor := wQtdVezesMenor + 1;
-
-          wContador := wContador + 1;
-        end;
-      
   wMedia := wSoma / Length(wNumeros);
 
   WriteLn(''); //Pula uma linha dentro da janela console
