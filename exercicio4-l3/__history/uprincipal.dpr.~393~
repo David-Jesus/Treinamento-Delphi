@@ -16,26 +16,24 @@ Const
 var
   wValor           ,
   wUnidade         ,
-  wDezena           ,
-  wMilhar           ,
+  wDezena          ,
+  wMilhar          ,
   wTexto           ,
-  wCentena          ,
-  wCentavos         ,
+  wCentena         ,
+  wCentavos        ,
   wAuxiliar        : String;
-
   wValorLido       : Real;
   wCentavo         : Integer;
 
 begin
-  Writeln('Digite um valor de 1  9999');
+  Writeln('Digite um valor de 1  9999.99');
   Readln(wValorLido);
   wValor   := FloatToStr(trunc(wValorLido));
   wCentavo := round(frac(wValorLido) * 100);
   try
-    { TODO -oUser -cConsole Main : Insert code here }
-    if (StrToFloat(wValor) <= 9999.99) and (StrToFloat(wValor) > 0) then
+    if (StrToFloat(wValor) <= 9999.99) and (wValorLido > 0) then
        begin
-          if Length(wValor) = 1 then
+          if (Length(wValor) = 1) and (StrToInt(wValor) > 0) then
              begin
                wUnidade := cUnidades[StrToInt(wValor[1])];
                wMilhar  := '';
@@ -97,10 +95,11 @@ begin
                       if wValor[4] = '0' then
                          wDezena :=  cDezenas[StrToInt(wValor[3])]
                       else
-                        begin
-                          wUnidade := cUnidades[StrToInt(wValor[4])];
-                          wDezena :=  cDezenas[StrToInt(wValor[3])] + ' e ';
-                        end;
+                         if (wValor[1] <> '0') then
+                            begin
+                              wUnidade := cUnidades[StrToInt(wValor[4])];
+                              wDezena :=  cDezenas[StrToInt(wValor[3])] + ' e ';
+                            end;
                     end;
          end;
 

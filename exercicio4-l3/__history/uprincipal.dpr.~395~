@@ -65,7 +65,7 @@ begin
                      else
                         begin
                           if (wValor[3] = '0') then
-                             wDezena :=  cDezenas[StrToInt(wValor[2])]+ ' reais '
+                             wDezena :=  cDezenas[StrToInt(wValor[2])]
                           else
                              begin
                                wUnidade := cUnidades[StrToInt(wValor[3])];
@@ -138,7 +138,7 @@ begin
          if wDezena  <> '' then
             wTexto := wTexto + wDezena;
          if wUnidade <> '' then
-            wTexto := wTexto + wUnidade+ ' reais e ';
+            wTexto := wTexto + wUnidade+ ' reais ';
          if wCentavos <> '' then
             wTexto := wTexto  + '' + wCentavos + ' centavos';
          Writeln('');

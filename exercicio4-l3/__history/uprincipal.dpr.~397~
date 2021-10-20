@@ -61,11 +61,11 @@ begin
                         wCentena := cCentenas[StrToInt(wValor[1])] + ' e ';
 
                      if (wValor[2] = '1') and (wValor[3] <> '0') then
-                        wDezena :=  cDez[StrToInt(wValor[3])]
+                        wDezena :=  cDez[StrToInt(wValor[3])] + ' reais '
                      else
                         begin
                           if (wValor[3] = '0') then
-                             wDezena :=  cDezenas[StrToInt(wValor[2])]+ ' reais '
+                             wDezena :=  cDezenas[StrToInt(wValor[2])]
                           else
                              begin
                                wUnidade := cUnidades[StrToInt(wValor[3])];
