@@ -28,14 +28,14 @@ implementation
 {$R *.dfm}
 
 procedure TForm1.brCalcularClick(Sender: TObject);
-  var
-    wTamanhopista      ,
-    wCapacidadeTanque  ,
-    wResultado         ,
-    wTotalMetros       ,
-    wTotalDeTanques    ,
-    wConsumoCombustivel: Currency;
-    wNumeroVoltas      : Integer;
+var
+  wTamanhopista      ,
+  wCapacidadeTanque  ,
+  wResultado         ,
+  wTotalMetros       ,
+  wTotalDeTanques    ,
+  wConsumoCombustivel: Currency;
+  wNumeroVoltas      : Integer;
 begin
   if edPista.Text = '' then
      begin

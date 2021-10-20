@@ -43,7 +43,8 @@ begin
     wCaracter           := edCaracter.Text[1];
     lbResultado.Caption := validaCaractere(wCaracter);
     lbResultado.Visible := True;
-  except on E: Exception do
+  except
+    on E: Exception do
   end;
 end;
 

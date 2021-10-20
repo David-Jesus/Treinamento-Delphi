@@ -33,11 +33,11 @@ uses ureposicao;
 
 procedure TfrExercicio.btCalculaMediaClick(Sender: TObject);
 var
- wNota1         ,
- wNota2         ,
- wNota3         ,
- wMedia         : Currency;
- wFormReposicao : TfrReposicao;
+  wNota1         ,
+  wNota2         ,
+  wNota3         ,
+  wMedia         : Currency;
+  wFormReposicao : TfrReposicao;
 begin
   mmMedia.Clear;
   if edNota1.Text = '' then
@@ -98,7 +98,6 @@ begin
        begin
          if MessageDlg('Aluno em reposição, deseja informar a nota da prova de reposição?', mtWarning, [mbYes, mbNo], 0) = mrYes then
             begin
-//              wFormReposicao := TfrReposicao.Create(wNota1, wNota2, wNota3);
               wFormReposicao := TfrReposicao.Create(nil);
               try
                 wFormReposicao.Nota1 := wNota1;

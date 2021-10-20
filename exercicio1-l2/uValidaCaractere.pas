@@ -19,13 +19,13 @@ function validaCaractere(const prCaractere : Char) : String;
          if wResultado then
             Result := 'O caractere informado é do tipo: Vogal'
          else
-           Result := 'O caractere informado é do tipo: Consoante';
+            Result := 'O caractere informado é do tipo: Consoante';
        end
     else
-      if prCaractere in ['0'..'9'] then
-         Result := 'O caractere informado é um número'
-      else
-         Result := 'O caractere informado é um caractere especial'
+    if prCaractere in ['0'..'9'] then
+       Result := 'O caractere informado é um número'
+    else
+       Result := 'O caractere informado é um caractere especial'
   end;
 
 end.

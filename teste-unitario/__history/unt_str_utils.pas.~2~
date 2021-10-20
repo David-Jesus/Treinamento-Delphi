@@ -1,0 +1,14 @@
+unit unt_str_utils;
+ interface
+ type
+   TStrUtils = class
+   private
+     FStr: String;
+   public
+     Constructor Create(const AStr : string);
+     function Equals(const AStr : string):boolean;
+     function EqualsIgnoreCase(const AStr : string):boolean;
+     function ToUpper():string;
+     function ToLower():string;
+     property str : String read FStr write FStr;
+end;

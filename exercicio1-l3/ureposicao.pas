@@ -28,15 +28,11 @@ type
     property Nota3: Currency read FNota3 write FNota3;
   end;
 
-
-
-
 implementation
 
 {$R *.dfm}
 
 uses ufinal;
-
 
 { TfrReposicao }
 
@@ -55,47 +51,57 @@ var
   frReposicao: TfrReposicao;
   wFormFinal : TfrProvaFinal;
 begin
- if edReposicao.Text = '' then
+  if edReposicao.Text = '' then
      begin
        MessageDlg('Favor informar a nota de reposição!', mtWarning, [mbOk], 0);
        exit;
- end;
+     end;
 
- try
-   FNotaReposicao := StrToFloat(edReposicao.Text);
-   if FNotaReposicao > FNota1 then
-      Nota1 := FNotaReposicao
-   else
-   if FNotaReposicao > FNota2 then
-      Nota2 := FNotaReposicao
-   else
-   if FNotaReposicao > FNota3 then
-      Nota3 := FNotaReposicao;
-   FMedia := (FNota1 + FNota2 + FNota3) / 3;
+  try
+    FNotaReposicao := StrToFloat(edReposicao.Text);
 
-   edMedia.Text    := formatfloat('#0.00', FMedia);
+    if FNotaReposicao > 10  then
+       begin
+         MessageDlg('Favor informar a nota 1 menor que 10!', mtWarning, [mbOk], 0);
+         exit;
+       end;
 
-   if FMedia >= 7 then
+    if (FNotaReposicao > FNota1) and (FNota1 < FNota2) then
+       Nota1 := FNotaReposicao
+    else
+    if (FNotaReposicao > FNota2) and (FNota2 < FNota3) then
+       Nota2 := FNotaReposicao
+    else
+    if FNotaReposicao > FNota3 then
+       Nota3 := FNotaReposicao
+    else
+       Nota3 := FNotaReposicao;
+
+    FMedia := (FNota1 + FNota2 + FNota3) / 3;
+
+    edMedia.Text    := formatfloat('#0.00', FMedia);
+
+    if FMedia >= 7 then
        MessageDlg('Aluno aprovado com sucesso.', mtConfirmation, [mbok], 0)
     else
-      begin
-        if MessageDlg('Aluno em prova final, deseja informar a nota da prova de final?', mtWarning, [mbYes, mbNo], 0) = mrYes then
-           begin
-             wFormFinal := TfrProvaFinal.Create(Fmedia);
-             try
-               wFormFinal.ShowModal;
-             finally
-             if Assigned(wFormFinal) then
-                FreeAndNil(wFormFinal);
-             end;
-            end
+       begin
+         if MessageDlg('Aluno em prova final, deseja informar a nota da prova de final?', mtWarning, [mbYes, mbNo], 0) = mrYes then
+            begin
+              wFormFinal := TfrProvaFinal.Create(Fmedia);
+              try
+                wFormFinal.ShowModal;
+              finally
+                if Assigned(wFormFinal) then
+                   FreeAndNil(wFormFinal);
+              end;
+          end
          else
-           MessageDlg('Aluno reprovado!', mtWarning, [mbOK], 0)
+            MessageDlg('Aluno reprovado!', mtWarning, [mbOK], 0)
        end;
   except
     on E:Exception do
       MessageDlg('Existem caracteres inválidos.' + #13#10#13#10 + 'Erro: ' + E.Message, mtWarning, [mbOK], 0)
-    end;
+  end;
 end;
 
 end.

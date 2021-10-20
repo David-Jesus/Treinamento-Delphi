@@ -8,10 +8,10 @@ uses
   System.SysUtils;
 
 Const
-wDez     : array[1..9] of string = ('Onze', 'Doze', 'Treze', 'Quatorze', 'Quinze', 'Dezesseis', 'Dezessete', 'Dezoito', 'Dezenove');
-wDezenas : array[1..9] of string = ('Dez', 'Vinte', 'Trinta', 'Quarenta','Cinquenta', 'Sessenta', 'Setenta', 'Oitenta', 'Noventa');
-wUnidades: array[1..9] of string = ('Um', 'Dois', 'Tres', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove');
-wCentenas: array[1..9] of string = ('Cento', 'Duzentos', 'Trezentos', 'Quatrocentos', 'Quinhentos', 'Seiscentos', 'Setecentos', 'Oitocentos', 'Novecentos');
+  wDez     : array[1..9] of string = ('Onze', 'Doze', 'Treze', 'Quatorze', 'Quinze', 'Dezesseis', 'Dezessete', 'Dezoito', 'Dezenove');
+  wDezenas : array[1..9] of string = ('Dez', 'Vinte', 'Trinta', 'Quarenta','Cinquenta', 'Sessenta', 'Setenta', 'Oitenta', 'Noventa');
+  wUnidades: array[1..9] of string = ('Um', 'Dois', 'Tres', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove');
+  wCentenas: array[1..9] of string = ('Cento', 'Duzentos', 'Trezentos', 'Quatrocentos', 'Quinhentos', 'Seiscentos', 'Setecentos', 'Oitocentos', 'Novecentos');
 
 var
   wValor          ,
@@ -54,13 +54,7 @@ begin
                       dezena :=  wDezenas[StrToInt(wValor[1])]
                    else
                      dezena :=  wDezenas[StrToInt(wValor[1])] + ' e ';
-               end;
-            if (wValor[2] <> '') and (wValor[2] <> '0')  then
-               begin
-                 if (wValor[2] = '0') then
-                    unidade := wUnidades[StrToInt(wValor[2])]
-                 else
-                   unidade := '';
+                   unidade := wUnidades[StrToInt(wValor[2])]
                end;
 
              end
@@ -118,18 +112,27 @@ begin
               centavos := IntToStr(wCentavo);
               wAuxiliar := centavos;
 
-              if (wAuxiliar[1] = '1') and (wAuxiliar[2] <> '0') then
-                 centavos :=  wDez[StrToInt(centavos[2])]
+              if wAuxiliar[2] = '' then
+                 centavos := wUnidades[StrToInt(wAuxiliar[1])]
               else
-                begin
-                  if wAuxiliar[2] = '0' then
-                     centavos :=  wDezenas[StrToInt(centavos[1])]
-                  else
-                    begin
-                      centavos :=  wDezenas[StrToInt(centavos[1])] + ' e ';
-                      centavos := centavos + wUnidades[StrToInt(wAuxiliar[2])];
-                    end;
-                end;
+                 begin
+                   if (wAuxiliar[1] = '1') and (wAuxiliar[2] <> '0') then
+                      centavos :=  wDez[StrToInt(centavos[2])]
+                   else
+                     begin
+                       if wAuxiliar[2] = '0' then
+                          centavos :=  wDezenas[StrToInt(centavos[1])]
+                       else
+                          begin
+                            centavos :=  wDezenas[StrToInt(centavos[1])] + ' e ';
+
+                             if wAuxiliar[2] = '' then
+                                centavos := ''
+                             else
+                            centavos := centavos + wUnidades[StrToInt(wAuxiliar[2])];
+                          end;
+                     end;
+                 end;
          end;
 
         if milhar  <>  '' then
@@ -139,9 +142,10 @@ begin
         if dezena  <> '' then
            wtexto := wtexto + dezena;
         if unidade <> '' then
-           wtexto := wtexto + unidade + ' reais ';
+           wtexto := wtexto + unidade;
         if centavos <> '' then
-           wtexto := wtexto + 'e ' + centavos + ' centavos';
+           wtexto := wtexto + ' reais ' + 'e ' + centavos + ' centavos';
+        Writeln('');
         Writeln(wtexto);
       end
     else
