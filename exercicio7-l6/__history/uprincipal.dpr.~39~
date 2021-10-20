@@ -33,13 +33,31 @@ begin
 
   while True do
     begin
-      Writeln('Digite o número de gols marcados pelo time Inter:');
-      Readln(wNumeroLidoUm);
-      Writeln('');
+//      Writeln('Digite o número de gols marcados pelo time Inter:');
+//      Readln(wNumeroLidoUm);
+//      Writeln('');
 
-      Writeln('Digite o número de gols marcados pelo time Grêmio:');
-      Readln(wNumeroLidoDois);
-      Writeln('');
+      repeat
+        Writeln('Digite o número de gols marcados pelo time Inter:');
+        Readln(wNumeroLidoUm);
+        Writeln('');
+        if not (TryStrToInt(wNumeroLidoUm, wNrGolsTimeUm)) then
+           Writeln('Digite apenas números!');
+
+      until TryStrToInt(wNumeroLidoUm, wNrGolsTimeUm);
+
+//      Writeln('Digite o número de gols marcados pelo time Grêmio:');
+//      Readln(wNumeroLidoDois);
+//      Writeln('');
+
+      repeat
+        Writeln('Digite o número de gols marcados pelo time Grêmio:');
+        Readln(wNumeroLidoDois);
+        Writeln('');
+        if not TryStrToInt(wNumeroLidoDois, wNrGolsTimeDois) then
+           Writeln('Digite apenas números!');
+
+      until TryStrToInt(wNumeroLidoUm, wNrGolsTimeUm);
 
       try
         if TryStrToInt(wNumeroLidoUm, wNrGolsTimeUm) and TryStrToInt(wNumeroLidoDois, wNrGolsTimeDois) then
@@ -71,37 +89,41 @@ begin
                    Writeln('1 - Sim');
                    Writeln('2 - Não');
                    Readln(wOpcaoLida);
-                 until (TryStrToInt(wOpcaoLida, wOpcao)) or (StrToInt(wOpcaoLida) > 2);
+                   if (StrToInt(wOpcaoLida) > 2) or (StrToInt(wOpcaoLida) < 1) then
+                      wOpcaoLida := 'x';
+
+                 until TryStrToInt(wOpcaoLida, wOpcao);
                end;
 
-                 wOpcao := StrToInt(wOpcaoLida);
+             wOpcao := StrToInt(wOpcaoLida);
 
-                 if (wOpcao = 2) then
-                    begin
-                      Writeln('Números de Grenais informados--------: ' + IntToStr(wNrGrenais));
-                      Writeln('Número de vitórias do Inter----------: ' + IntToStr(wNrVitoriasTimeUm));
-                      Writeln('Número de vitórias do Grêmio---------: ' + IntToStr(wNrVitoriasTimeDois));
-                      Writeln('Número de Empates: ' + IntToStr(wEmpates));
-                      Writeln('');
+             if (wOpcao = 2) then
+                begin
+                  Writeln('Números de Grenais informados--------: ' + IntToStr(wNrGrenais));
+                  Writeln('Número de vitórias do Inter----------: ' + IntToStr(wNrVitoriasTimeUm));
+                  Writeln('Número de vitórias do Grêmio---------: ' + IntToStr(wNrVitoriasTimeDois));
+                  Writeln('Número de Empates: ' + IntToStr(wEmpates));
+                  Writeln('');
 
-                      if (wNrVitoriasTimeUm > wNrGolsTimeDois) then
-                         Writeln('O Inter venceu o maior número de grenais')
-                      else
-                        if (wNrVitoriasTimeDois > wNrVitoriasTimeUm) then
-                        Writeln('O Grêmio venceu o maior número de grenais')
-                      else
-                        Writeln('Não houve vencedor');
+                  if (wNrVitoriasTimeUm > wNrGolsTimeDois) then
+                     Writeln('O Inter venceu o maior número de grenais')
+                  else
+                    if (wNrVitoriasTimeDois > wNrVitoriasTimeUm) then
+                       Writeln('O Grêmio venceu o maior número de grenais')
+                    else
+                      Writeln('Não houve vencedor');
 
-                      Writeln('Digite Enter para sair.');
-                      Readln;
-                      Break;
-                    end;
+                  Writeln('');
+                  Writeln('Digite Enter para sair.');
+                  Readln;
+                  Exit;
+                end;
            end
       else
         begin
           Writeln('');
           Writeln('Digite apenas números!');
-           Writeln('');
+          Writeln('');
         end;
 
       except
