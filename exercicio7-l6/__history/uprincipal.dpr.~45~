@@ -73,21 +73,21 @@ begin
         Readln(wOpcaoLida);
 
         if not (TryStrToInt(wOpcaoLida, wOpcao)) or (StrToInt(wOpcaoLida) > 2) then
-           begin
-             repeat
-               Writeln('Digite apenas números e opções "1" ou "2"!');
-               Writeln('');
-               Writeln('Novo Grenal?');
-               Writeln('1 - Sim');
-               Writeln('2 - Não');
-               Readln(wOpcaoLida);
-               if (StrToInt(wOpcaoLida) > 2) or (StrToInt(wOpcaoLida) < 1) then
-                  wOpcaoLida := 'x';
+          begin
+            repeat
+              Writeln('Digite apenas números e opções "1" ou "2"!');
+              Writeln('');
+              Writeln('Novo Grenal?');
+              Writeln('1 - Sim');
+              Writeln('2 - Não');
+              Readln(wOpcaoLida);
+              if (StrToInt(wOpcaoLida) > 2) or (StrToInt(wOpcaoLida) < 1) then
+                 wOpcaoLida := 'x';
 
-             until TryStrToInt(wOpcaoLida, wOpcao);
-           end;
+            until TryStrToInt(wOpcaoLida, wOpcao);
+          end;
 
-           wOpcao := StrToInt(wOpcaoLida);
+        wOpcao := StrToInt(wOpcaoLida);
 
         if (wOpcao = 2) then
            begin
