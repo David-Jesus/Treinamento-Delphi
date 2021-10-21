@@ -13,8 +13,9 @@ File_10=TSourceModule,'C:\Users\progweb03\Documents\David\testes_delphi\Unit1.pa
 
 [Modules]
 Module0=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio4-l4\uprincipal.pas
-Module1=default.htm
-Count=2
+Module1=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio4-l4\ex01.dproj
+Module2=default.htm
+Count=3
 EditWindowCount=1
 
 [C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio4-l4\uprincipal.pas]
@@ -22,14 +23,18 @@ ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
+[C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio4-l4\ex01.dproj]
+ModuleType=TBaseProject
+
 [default.htm]
 ModuleType=TURLModule
 
 [EditWindow0]
-ViewCount=2
+ViewCount=3
 CurrentEditView=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio4-l4\uprincipal.pas
 View0=0
 View1=1
+View2=2
 PercentageSizes=1
 Create=1
 Visible=1
@@ -57,7 +62,7 @@ BottomPanelClients=DockSite1,MessageView
 BottomPanelData=0000080001020100000009000000446F636B5369746531724500000000000002EF050000000000000100000000724500000F0000004D65737361676556696577466F726DFFFFFFFF
 BottomMiddlePanelSize=0
 BottomMiddlePanelClients=DockSite0,GraphDrawingModel
-BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E67566965779F1D00000000000002F206000000000000FFFFFFFF
+BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E6756696577F52900000000000002990A000000000000FFFFFFFF
 
 [View0]
 CustomEditViewType=TWelcomePageView
@@ -66,13 +71,24 @@ WelcomePageURL=bds:/default.htm
 [View1]
 CustomEditViewType=TEditView
 Module=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio4-l4\uprincipal.pas
-CursorX=95
-CursorY=42
-TopLine=55
+CursorX=24
+CursorY=84
+TopLine=82
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio4-l4\uprincipal.pas
+
+[View2]
+CustomEditViewType=TEditView
+Module=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio4-l4\ex01.dpr
+CursorX=1
+CursorY=9
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio4-l4\ex01.dpr
 
 [Watches]
 Count=0
@@ -250,11 +266,11 @@ State=0
 Left=0
 Top=0
 Width=2339
-Height=1221
+Height=2337
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2339
-ClientHeight=1221
+ClientHeight=2337
 TBDockHeight=4837
 LRDockWidth=3562
 Dockable=1
@@ -269,11 +285,11 @@ State=0
 Left=0
 Top=0
 Width=2339
-Height=1221
+Height=2337
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2339
-ClientHeight=1221
+ClientHeight=2337
 TBDockHeight=4837
 LRDockWidth=3562
 Dockable=1
@@ -486,11 +502,11 @@ State=0
 Left=0
 Top=0
 Width=2339
-Height=1221
+Height=2337
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2339
-ClientHeight=1221
+ClientHeight=2337
 TBDockHeight=1154
 LRDockWidth=3677
 Dockable=1
@@ -637,19 +653,19 @@ Visible=0
 Docked=1
 State=0
 Left=0
-Top=0
+Top=23
 Width=2339
-Height=1481
+Height=2596
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2339
-ClientHeight=1481
-TBDockHeight=1481
+ClientHeight=2596
+TBDockHeight=2596
 LRDockWidth=2339
 Dockable=1
 StayOnTop=0
 TabPosition=1
-ActiveTabID=RefactoringForm
+ActiveTabID=MetricsView
 TabDockClients=RefactoringForm,FindReferencsForm,ToDo List,MetricsView,QAView
 
 [DockSite1]

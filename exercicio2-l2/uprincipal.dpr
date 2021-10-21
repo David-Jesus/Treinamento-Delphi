@@ -104,7 +104,6 @@ begin
   Writeln('Maior número iformado: ' + IntToStr(wMaior) + '   foi informado: ' + IntToStr(wQtdVezesMaior) + '  vezes');
   Writeln;
 
-  Writeln('Soma dos valores informados: ' + IntToStr(wSoma));
   Writeln('Resultado da média do números informados: ' + CurrToStr(wMedia));
   WriteLn('Pressione Enter para sair');
   ReadLn;
