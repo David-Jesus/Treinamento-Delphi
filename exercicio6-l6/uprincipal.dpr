@@ -42,12 +42,12 @@ begin
              Readln;
              Break;
            end
-      else
-        begin
-          Writeln('');
-          Writeln('Digite apenas números!');
-           Writeln('');
-        end;
+        else
+           begin
+             Writeln('');
+             Writeln('Digite apenas números!');
+             Writeln('');
+           end;
 
       except
        on E: Exception do
