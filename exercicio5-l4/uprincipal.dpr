@@ -19,7 +19,7 @@ var
   wDataFinal  : TDateTime;
 
 begin
-  wDataInicial := EncodeDateTime(2000, 1, 12, 9, 10, 15, 0);
+  wDataInicial := EncodeDateTime(2016, 1, 12, 9, 10, 15, 0);
   wDataFinal   := EncodeDateTime(2021, 1, 12, 9, 10, 15, 0);
   wAno         := YearOf(wDataInicial);
   wDia         := 13;
