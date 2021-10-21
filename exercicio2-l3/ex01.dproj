@@ -101,6 +101,10 @@
         </DCCReference>
         <DCCReference Include="Pessoa.pas"/>
         <DCCReference Include="listaPessoa.pas"/>
+        <DCCReference Include="upesquisa.pas">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
