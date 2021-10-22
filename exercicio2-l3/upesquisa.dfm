@@ -2,8 +2,8 @@ object frmPesquisa: TfrmPesquisa
   Left = 0
   Top = 0
   Caption = 'Resultado da pesquisa'
-  ClientHeight = 361
-  ClientWidth = 704
+  ClientHeight = 435
+  ClientWidth = 792
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,9 +15,18 @@ object frmPesquisa: TfrmPesquisa
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
+  object lbFundo: TLabel
+    Left = 33
+    Top = 26
+    Width = 3
+    Height = 13
+    Color = clActiveBorder
+    ParentColor = False
+    Transparent = False
+  end
   object lbTeste: TLabel
-    Left = 448
-    Top = 40
+    Left = 512
+    Top = 24
     Width = 41
     Height = 16
     Caption = 'Filtro: '
@@ -28,37 +37,28 @@ object frmPesquisa: TfrmPesquisa
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object mmResultado: TMemo
-    Left = 24
-    Top = 39
-    Width = 401
-    Height = 281
-    Lines.Strings = (
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      '')
-    TabOrder = 0
+  object lbResultadoPesquisa: TLabel
+    AlignWithMargins = True
+    Left = 63
+    Top = 38
+    Width = 98
+    Height = 13
+    Caption = 'lbResultadoPesquisa'
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = False
+    Transparent = True
   end
   object rdgSexoFiltro: TRadioGroup
-    Left = 495
-    Top = 40
+    Left = 559
+    Top = 24
     Width = 73
     Height = 73
     Caption = 'Sexo'
@@ -71,11 +71,11 @@ object frmPesquisa: TfrmPesquisa
       'Mulher'
       'Homem')
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
   end
   object rdgEstadoCivilFiltro: TRadioGroup
-    Left = 495
-    Top = 136
+    Left = 559
+    Top = 120
     Width = 145
     Height = 89
     Caption = 'Estado Civil'
@@ -90,15 +90,15 @@ object frmPesquisa: TfrmPesquisa
       'Vi'#250'vo (a)'
       'Divorciado (a)')
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 1
   end
   object btFiltrar: TButton
-    Left = 495
-    Top = 255
+    Left = 559
+    Top = 239
     Width = 75
     Height = 33
     Caption = 'Filtrar'
-    TabOrder = 3
+    TabOrder = 2
     OnClick = btFiltrarClick
   end
 end

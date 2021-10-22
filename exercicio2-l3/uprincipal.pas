@@ -137,7 +137,7 @@ var
       else
       if (rbViuvo.Checked) then
          begin
-           fPessoa.estadoCivil := 'viuvo';
+           fPessoa.estadoCivil := 'Viúvo';
            rbViuvo.Checked     := false;
          end
       else
