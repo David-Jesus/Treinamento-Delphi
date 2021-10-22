@@ -2,8 +2,8 @@ object frPesquisa: TfrPesquisa
   Left = 0
   Top = 0
   Caption = 'Sistema Pesquisa'
-  ClientHeight = 360
-  ClientWidth = 379
+  ClientHeight = 344
+  ClientWidth = 387
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,22 +12,21 @@ object frPesquisa: TfrPesquisa
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 68
-    Top = 77
-    Width = 86
+    Left = 80
+    Top = 65
+    Width = 74
     Height = 13
-    Caption = 'Selecione o sexo:'
+    Caption = 'Inform o sexo: '
   end
-  object Label2: TLabel
-    Left = 44
-    Top = 174
-    Width = 107
+  object lbCivil: TLabel
+    Left = 36
+    Top = 190
+    Width = 118
     Height = 13
-    Caption = 'Informe o estado civil:'
+    Caption = 'Informe seu estado civil:'
   end
   object btAdicionar: TButton
     Left = 80
@@ -93,14 +92,6 @@ object frPesquisa: TfrPesquisa
     Caption = 'Divorciado'
     TabOrder = 5
   end
-  object btPesquisa: TButton
-    Left = 196
-    Top = 288
-    Width = 117
-    Height = 33
-    Caption = 'Visualizar Pesquisa'
-    TabOrder = 8
-  end
   object rdgSexo: TRadioGroup
     Left = 157
     Top = 65
@@ -129,5 +120,14 @@ object frPesquisa: TfrPesquisa
     ParentShowHint = False
     ShowHint = False
     TabOrder = 1
+  end
+  object btPesquisa: TButton
+    Left = 202
+    Top = 288
+    Width = 95
+    Height = 33
+    Caption = 'Ver Pesquisa'
+    TabOrder = 8
+    OnClick = btPesquisaClick
   end
 end

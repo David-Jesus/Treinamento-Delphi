@@ -11,26 +11,26 @@ type
   TfrPesquisa = class(TForm)
     btAdicionar: TButton;
     edIdade: TLabeledEdit;
-    Label1: TLabel;
     edSalario: TLabeledEdit;
     rbViuvo: TRadioButton;
     rbCasado: TRadioButton;
-    Label2: TLabel;
     rbSolteiro: TRadioButton;
     rbDivorciado: TRadioButton;
-    btPesquisa: TButton;
     rdgSexo: TRadioGroup;
-    procedure FormCreate(Sender: TObject);
+    btPesquisa: TButton;
+    lbCivil: TLabel;
     procedure btAdicionarClick(Sender: TObject);
+    procedure btPesquisaClick(Sender: TObject);
 
   private
     { Private declarations }
     fListaPessoas : TListaPessoa;
     fIdade        : Integer;
-    fSexo,
+    fSexo         ,
     fEstadoCivil  : String;
     fSalario      : Currency;
-    fPessoa : TPessoa;
+    fPessoa       : TPessoa;
+    FLista        : TList;
 
   public
     { Public declarations }
@@ -38,15 +38,19 @@ type
 
 var
   frPesquisa : TfrPesquisa;
-//  tPessoa    : TPessoa;
 
 implementation
 
 {$R *.dfm}
 
+uses upesquisa;
+
+var
+  wFormPesquisa : TfrmPesquisa;
 
 procedure TfrPesquisa.btAdicionarClick(Sender: TObject);
-
+var
+  i: Integer;
   begin
     if (edIdade.Text = '') then
        begin
@@ -145,10 +149,17 @@ procedure TfrPesquisa.btAdicionarClick(Sender: TObject);
            rbDivorciado.Checked := false;
          end;
 
-      fListaPessoas.Adicionar(fPessoa);
+//      fListaPessoas.(fPessoa);
+      FLista := TList.Create;
+      FLista.Add(fPessoa);
+
 
       ShowMessage('Adicionado com sucesso!');
-      ShowMessage(IntToStr(fListaPessoas.Count));
+      ShowMessage(IntToStr(FLista.Count));
+
+//      for i := 0 to (FLista.Count - 1) do
+//         ShowMessage(TPessoa(FLista.Items[i]).estadoCivil);
+
     finally
       if Assigned(fPessoa) or Assigned(fListaPessoas) then
          begin
@@ -158,18 +169,23 @@ procedure TfrPesquisa.btAdicionarClick(Sender: TObject);
 
     end;
 
-
-
-
      ShowMessage('Passou.');
   end;
 
-procedure TfrPesquisa.FormCreate(Sender: TObject);
+procedure TfrPesquisa.btPesquisaClick(Sender: TObject);
   begin
-    FListaPessoas := TListaPessoa.Create;
+    try
+      wFormPesquisa  := TfrmPesquisa.Create(FLista);
+//       wFormPesquisa  := TfrmPesquisa.Create(nil);
+//       wFormPesquisa.ListaPessoas := FLista;
+       wFormPesquisa.ShowModal;
+    finally
+      if Assigned(fPessoa) or Assigned(fListaPessoas) then
+         begin
+//           FreeAndNil(fPessoa);
+//           FreeAndNil(fListaPessoas);
+         end;
+    end;
   end;
-
-
-
 
 end.

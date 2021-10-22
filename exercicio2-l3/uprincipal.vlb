@@ -1,7 +1,4 @@
-﻿[Label2]
-Coordinates=145,78,53,58
-
-[rbSolteiro]
+﻿[rbSolteiro]
 Coordinates=90,146,70,36
 
 [rbCasado]
@@ -9,9 +6,6 @@ Coordinates=10,146,70,36
 
 [edIdade]
 Coordinates=10,10,61,58
-
-[btPesquisa]
-Coordinates=160,10,78,58
 
 [btAdicionar]
 Coordinates=248,10,79,58
@@ -29,9 +23,6 @@ Coordinates=208,78,87,36
 Coordinates=10,78,62,58
 Visible=True
 
-[Label1]
-Coordinates=82,78,53,58
-
 []
-Coordinates=288,1,91,36
+Coordinates=160,10,78,58
 
