@@ -38,10 +38,26 @@ Var
 
 function  filtro(prListaPessoas: TList; prSexo, prEstadoCivil: String) : String;
   begin
-    wContador    := 0;
-    wResultado   := '';
-    for wContadorLoop := 0 to (prListaPessoas.Count - 1) do
-      begin
+    wContador              := 0;
+    wResultado             := '';
+    wContador              := 0;
+    wContadorLoop          := 0;
+    wMaiorIdade            := 0;
+    wMenorIdade            := 0;
+    wQtdPessoas            := 0;
+    wIdadeAComparar        := 0;
+    wQtdPessoasSalarip500  := 0;
+    wQtdPessoasFaixa19     := 0;
+    wQtdPessoasFaixa29     := 0;
+    wQtdPessoasFaixa39     := 0;
+    wQtdPessoasFaixa49     := 0;
+    wQtdPessoasFaixa59     := 0;
+    wQtdPessoasFaixa69     := 0;
+    wQtdPessoasFaixa79     := 0;
+    wQtdPessoasFaixa89     := 0;
+    wQtdPessoasFaixaAcima89:= 0;
+//    for wContadorLoop := 0 to (prListaPessoas.Count - 1) do
+//      begin
 
         if (prSexo <> '') and (prEstadoCivil <> '') then
            begin
@@ -49,7 +65,7 @@ function  filtro(prListaPessoas: TList; prSexo, prEstadoCivil: String) : String;
              while True do
                begin
 
-               if (prSexo = Tpessoa(prListaPessoas.Items[wContadorLoop]).sexo) and (prEstadoCivil = Tpessoa(prListaPessoas.Items[wContadorLoop]).estadoCivil) then
+               if (prSexo = Tpessoa(prListaPessoas.Items[wContador]).sexo) and (prEstadoCivil = Tpessoa(prListaPessoas.Items[wContador]).estadoCivil) then
                  Break
                else
                   wContador := wContador + 1;
@@ -59,19 +75,19 @@ function  filtro(prListaPessoas: TList; prSexo, prEstadoCivil: String) : String;
                end;
 
            end;
-
-           if wContador >= prListaPessoas.Count then
-              begin
-                wResultado := '';
-                break;
-              end
-           else
+//
+//           if wContador >= prListaPessoas.Count then
+//              begin
+//                wResultado := '';
+//                break;
+//              end
+//           else
               begin
                  while (wContador <= prListaPessoas.Count - 1) do
                    begin
-                     wSoma        := 0;
-                     wMaiorIdade  := Tpessoa(prListaPessoas.Items[0]).idade;
-                     wMenorIdade  := Tpessoa(prListaPessoas.Items[0]).idade;
+                     wSoma             := 0;
+                     wMaiorIdade       := Tpessoa(prListaPessoas.Items[0]).idade;
+                     wMenorIdade       := Tpessoa(prListaPessoas.Items[0]).idade;
                      wSoma             := wSoma  + (Tpessoa(prListaPessoas.Items[wContador]).salario);
                      wIdadeAComparar   := Tpessoa(prListaPessoas.Items[wContador]).idade;
                      wSalarioAComparar := Tpessoa(prListaPessoas.Items[wContador]).salario;
@@ -131,13 +147,13 @@ function  filtro(prListaPessoas: TList; prSexo, prEstadoCivil: String) : String;
                      wResultado := wResultado + #13 + 'Quantidade de pessoas na faixa etária acima de (89) anos:-  ' + IntToStr(wQtdPessoasFaixaAcima89);
                      wContador := wContador + 1;
                    end;
-              end;
+//              end;
         end;
 
     if wResultado <> '' then
        Result := wResultado
     else
-       Result := 'Se resultados para este filtro.';
+       Result := 'Sem resultados para este filtro.';
 
   end;
 
