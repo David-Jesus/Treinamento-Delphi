@@ -9,9 +9,9 @@ File_6=TSourceModule,'C:\Users\progweb03\Documents\David\testes_delphi\Unit1.pas
 
 [Modules]
 Module0=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l3\ureposicao.pas
-Module1=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l3\ex01.dproj
-Module2=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l3\uprincipal.pas
-Module3=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l3\ufinal.pas
+Module1=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l3\uprincipal.pas
+Module2=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l3\ufinal.pas
+Module3=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l3\ex01.dproj
 Count=4
 EditWindowCount=1
 
@@ -20,18 +20,18 @@ ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
-[C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l3\ex01.dproj]
-ModuleType=TBaseProject
-
 [C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l3\uprincipal.pas]
 ModuleType=TSourceModule
 FormState=1
-FormOnTop=0
+FormOnTop=1
 
 [C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l3\ufinal.pas]
 ModuleType=TSourceModule
 FormState=1
-FormOnTop=0
+FormOnTop=1
+
+[C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l3\ex01.dproj]
+ModuleType=TBaseProject
 
 [EditWindow0]
 ViewCount=4
@@ -47,21 +47,21 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=10000
-Height=9240
+Width=7115
+Height=6240
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=10000
-ClientHeight=9240
+ClientWidth=7115
+ClientHeight=6240
 DockedToMainForm=1
 BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
-LeftPanelSize=1896
+LeftPanelSize=1339
 LeftPanelClients=PropertyInspector,DockSite3
-LeftPanelData=000008000101000000008D1300000000000001680700000000000001000000005C0E000009000000446F636B53697465330100000000C22200001100000050726F7065727479496E73706563746F72FFFFFFFF
+LeftPanelData=00000800010100000000340D000000000000013B0500000000000001000000005C0E000009000000446F636B53697465330100000000791700001100000050726F7065727479496E73706563746F72FFFFFFFF
 RightPanelSize=2000
 RightPanelClients=DockSite2,DockSite4
-RightPanelData=000008000101000000008D1300000000000001D00700000000000001000000004412000009000000446F636B53697465320100000000C222000009000000446F636B5369746534FFFFFFFF
+RightPanelData=00000800010100000000340D00000000000001D00700000000000001000000004412000009000000446F636B536974653201000000007917000009000000446F636B5369746534FFFFFFFF
 BottomPanelSize=0
 BottomPanelClients=DockSite1,MessageView
 BottomPanelData=0000080001020200000009000000446F636B53697465310F0000004D65737361676556696577466F726D1534000000000000022606000000000000FFFFFFFF
@@ -72,10 +72,10 @@ BottomMiddelPanelData=0000080001020200000009000000446F636B5369746530100000004772
 [View0]
 CustomEditViewType=TEditView
 Module=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l3\ureposicao.pas
-CursorX=3
-CursorY=42
-TopLine=55
-LeftCol=1
+CursorX=64
+CursorY=85
+TopLine=65
+LeftCol=19
 Elisions=
 Bookmarks=
 EditViewName=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio1-l3\ureposicao.pas
@@ -152,17 +152,17 @@ Create=1
 Visible=1
 Docked=0
 State=2
-Left=146
-Top=269
+Left=8974
+Top=1163
 Width=8932
-Height=8519
+Height=7000
 MaxLeft=-5
 MaxTop=-10
 MaxWidth=8932
-MaxHeight=8519
-ClientWidth=10000
-ClientHeight=9779
-BottomPanelSize=8898
+MaxHeight=7000
+ClientWidth=7115
+ClientHeight=6779
+BottomPanelSize=6009
 BottomPanelClients=EditWindow0
 BottomPanelData=0000080000000000000000000000000000000000000000000000000100000000000000000C0000004564697457696E646F775F30FFFFFFFF
 
@@ -213,11 +213,11 @@ State=0
 Left=0
 Top=0
 Width=2000
-Height=4163
+Height=1163
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
-ClientHeight=4163
+ClientHeight=1163
 TBDockHeight=7154
 LRDockWidth=2000
 Dockable=1
@@ -326,17 +326,22 @@ Docked=1
 State=0
 Left=0
 Top=420
-Width=1896
-Height=5202
+Width=1339
+Height=2202
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1896
-ClientHeight=5202
+ClientWidth=1339
+ClientHeight=2202
 TBDockHeight=7346
-LRDockWidth=1896
+LRDockWidth=1339
 Dockable=1
 StayOnTop=0
-SplitPos=111
+SplitPos=78
+
+[PropInspDesignerSelection]
+ArrangeBy=Name
+SelectedItem=Action,
+ExpandedItems=Anchors=0,ActiveControl=0
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -615,11 +620,11 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=1896
+Width=1339
 Height=3558
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1896
+ClientWidth=1339
 ClientHeight=3558
 TBDockHeight=3683
 LRDockWidth=1896
@@ -749,14 +754,14 @@ Docked=1
 State=0
 Left=0
 Top=23
-Width=1896
+Width=1339
 Height=3558
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1896
+ClientWidth=1339
 ClientHeight=3558
 TBDockHeight=7346
-LRDockWidth=1896
+LRDockWidth=1339
 Dockable=1
 StayOnTop=0
 TabPosition=1
@@ -774,11 +779,11 @@ State=0
 Left=0
 Top=528
 Width=2000
-Height=4163
+Height=1163
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
-ClientHeight=4163
+ClientHeight=1163
 TBDockHeight=7346
 LRDockWidth=2000
 Dockable=1

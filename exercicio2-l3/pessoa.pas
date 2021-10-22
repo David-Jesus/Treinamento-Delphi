@@ -16,7 +16,7 @@ interface
        property salario     : Currency read Fsalario     write Fsalario;
        property estadoCivil : String   read FestadoCivil write FestadoCivil;
 
-    end;
+end;
 
 implementation
 

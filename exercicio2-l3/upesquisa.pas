@@ -5,13 +5,17 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, listaPessoa, Vcl.StdCtrls, Pessoa,
-  Vcl.Grids;
+  Vcl.Grids, Vcl.ExtCtrls;
 
 type
   TfrmPesquisa = class(TForm)
     lbTeste: TLabel;
     mmResultado: TMemo;
+    rdgSexoFiltro: TRadioGroup;
+    rdgEstadoCivilFiltro: TRadioGroup;
+    btFiltrar: TButton;
     procedure FormCreate(Sender: TObject);
+    procedure btFiltrarClick(Sender: TObject);
 
   private
     FListaPessoas: TList;
@@ -41,12 +45,17 @@ var
   wSoma             ,
   wMediaSalario     ,
   wSalarioAComparar : Currency;
+  wSexo             ,
+  wEstadoCivil      : String;
 
 implementation
 
 {$R *.dfm}
 
+uses uFiltro;
+
 { TForm1 }
+
 
 constructor TfrmPesquisa.Create(prListaPessoa: TList);
   begin
@@ -54,10 +63,40 @@ constructor TfrmPesquisa.Create(prListaPessoa: TList);
     FListaPessoas := TList.Create;
     if prListaPessoa <> nil then
        FListaPessoas := prListaPessoa;
+  end;   
+
+procedure TfrmPesquisa.btFiltrarClick(Sender: TObject);
+  begin
+    ShowMessage('Teste');
+
+    if (rdgSexoFiltro.ItemIndex = 0) then
+       wSexo := 'Mulher'
+    else
+    if (rdgSexoFiltro.ItemIndex = 1) then
+       wSexo := 'Mulher'
+    else
+       wSexo := '';
+
+    if (rdgEstadoCivilFiltro.ItemIndex = 0) then
+           wEstadoCivil := 'Casado'
+
+      else
+      if (rdgEstadoCivilFiltro.ItemIndex = 1)then
+           wEstadoCivil := 'viuvo'
+      else
+      if  (rdgEstadoCivilFiltro.ItemIndex = 2) then
+            wEstadoCivil := 'Solteiro'
+      else
+      if (rdgEstadoCivilFiltro.ItemIndex = 3) then
+          wEstadoCivil  := 'Divorciado'
+      else
+         wEstadoCivil  := 'Divorciado';
+         
+    ShowMessage(filtro(FListaPessoas, wSexo, wEstadoCivil));
   end;
-
-
+    
 procedure TfrmPesquisa.FormCreate(Sender: TObject);
+    
   begin
     if FListaPessoas <> nil then
        begin
@@ -127,11 +166,6 @@ procedure TfrmPesquisa.FormCreate(Sender: TObject);
          mmResultado.Lines[17] := 'Quantidade de pessoas na faixa etária acima de (89) anos:-- ' + IntToStr(wQtdPessoasFaixaAcima89);
          mmResultado.ReadOnly := True;
        end;
-  end;
-
-procedure Filtro();
-  begin
-
   end;
 
 end.
