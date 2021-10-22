@@ -11,6 +11,9 @@ type
   TfrmPesquisa = class(TForm)
     lbTeste: TLabel;
     mmResultado: TMemo;
+    rdgSexoFiltro: TRadioGroup;
+    rgdEstadoCivilFiltro: TRadioGroup;
+    btFiltrar: TButton;
     procedure FormCreate(Sender: TObject);
 
   private
@@ -111,27 +114,27 @@ procedure TfrmPesquisa.FormCreate(Sender: TObject);
 
          wMediaSalario        := wSoma /  FListaPessoas.Count;
 
-         mmResultado.Lines[0]  := 'MÈdia de sal·rio dentre os registros:----------------------------- R$' + FloatToStr(wMediaSalario);
+         mmResultado.Lines[0]  := 'M√©dia de sal√°rio dentre os registros:----------------------------- R$' + FloatToStr(wMediaSalario);
          mmResultado.Lines[2]  := 'Maior  idade dentre os registros:---------------------------------- ' + IntToStr(wMaiorIdade) + ' anos';
          mmResultado.Lines[3]  := 'Menor idade dentre os registros:---------------------------------- ' + IntToStr(wMenorIdade)  + ' anos';
-         mmResultado.Lines[5]  := 'Quantidade de pessoas com sal·rio atÈ R$500,00------------- ' + IntToStr(wQtdPessoasSalarip500);
-         mmResultado.Lines[7]  := 'Quantidade de pessoas que responderam ‡ pesquisa:-------- ' + IntToStr(FListaPessoas.Count);
-         mmResultado.Lines[9]  := 'Quantidade de pessoas na faixa et·ria (00-19) anos:--------- ' + IntToStr(wQtdPessoasFaixa19);
-         mmResultado.Lines[10] := 'Quantidade de pessoas na faixa et·ria (20-29) anos:--------- ' + IntToStr(wQtdPessoasFaixa29);
-         mmResultado.Lines[11] := 'Quantidade de pessoas na faixa et·ria (30-39) anos:--------- ' + IntToStr(wQtdPessoasFaixa39);
-         mmResultado.Lines[12] := 'Quantidade de pessoas na faixa et·ria (40-49) anos:--------- ' + IntToStr(wQtdPessoasFaixa49);
-         mmResultado.Lines[13] := 'Quantidade de pessoas na faixa et·ria (50-59) anos:--------- ' + IntToStr(wQtdPessoasFaixa59);
-         mmResultado.Lines[14] := 'Quantidade de pessoas na faixa et·ria (60-69) anos:--------- ' + IntToStr(wQtdPessoasFaixa69);
-         mmResultado.Lines[15] := 'Quantidade de pessoas na faixa et·ria (70-79) anos:--------- ' + IntToStr(wQtdPessoasFaixa79);
-         mmResultado.Lines[16] := 'Quantidade de pessoas na faixa et·ria (80-89) anos:--------- ' + IntToStr(wQtdPessoasFaixa89);
-         mmResultado.Lines[17] := 'Quantidade de pessoas na faixa et·ria acima de (89) anos:-- ' + IntToStr(wQtdPessoasFaixaAcima89);
+         mmResultado.Lines[5]  := 'Quantidade de pessoas com sal√°rio at√© R$500,00------------- ' + IntToStr(wQtdPessoasSalarip500);
+         mmResultado.Lines[7]  := 'Quantidade de pessoas que responderam √† pesquisa:-------- ' + IntToStr(FListaPessoas.Count);
+         mmResultado.Lines[9]  := 'Quantidade de pessoas na faixa et√°ria (00-19) anos:--------- ' + IntToStr(wQtdPessoasFaixa19);
+         mmResultado.Lines[10] := 'Quantidade de pessoas na faixa et√°ria (20-29) anos:--------- ' + IntToStr(wQtdPessoasFaixa29);
+         mmResultado.Lines[11] := 'Quantidade de pessoas na faixa et√°ria (30-39) anos:--------- ' + IntToStr(wQtdPessoasFaixa39);
+         mmResultado.Lines[12] := 'Quantidade de pessoas na faixa et√°ria (40-49) anos:--------- ' + IntToStr(wQtdPessoasFaixa49);
+         mmResultado.Lines[13] := 'Quantidade de pessoas na faixa et√°ria (50-59) anos:--------- ' + IntToStr(wQtdPessoasFaixa59);
+         mmResultado.Lines[14] := 'Quantidade de pessoas na faixa et√°ria (60-69) anos:--------- ' + IntToStr(wQtdPessoasFaixa69);
+         mmResultado.Lines[15] := 'Quantidade de pessoas na faixa et√°ria (70-79) anos:--------- ' + IntToStr(wQtdPessoasFaixa79);
+         mmResultado.Lines[16] := 'Quantidade de pessoas na faixa et√°ria (80-89) anos:--------- ' + IntToStr(wQtdPessoasFaixa89);
+         mmResultado.Lines[17] := 'Quantidade de pessoas na faixa et√°ria acima de (89) anos:-- ' + IntToStr(wQtdPessoasFaixaAcima89);
          mmResultado.ReadOnly := True;
        end;
   end;
 
 procedure Filtro();
   begin
-
+   
   end;
 
 end.

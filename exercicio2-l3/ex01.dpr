@@ -13,6 +13,5 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrPesquisa, frPesquisa);
-//  Application.CreateForm(TfrmPesquisa, frmPesquisa);
   Application.Run;
 end.

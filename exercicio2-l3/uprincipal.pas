@@ -154,9 +154,7 @@ var
 
       FLista.Add(fPessoa);
       MessageDlg('Adicionado com sucesso!!', mtConfirmation, [mbOK], 0);
-//      ShowMessage('Adicionado com sucesso!');
       lbTotalValor.Caption := IntToStr(FLista.Count);
-      ShowMessage(IntToStr(FLista.Count));
 
     finally
       if Assigned(fPessoa) or Assigned(fListaPessoas) then
@@ -166,8 +164,6 @@ var
          end;
 
     end;
-
-     ShowMessage('Passou.');
   end;
 
 procedure TfrPesquisa.btPesquisaClick(Sender: TObject);
