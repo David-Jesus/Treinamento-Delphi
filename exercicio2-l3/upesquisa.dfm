@@ -27,6 +27,25 @@ object frmPesquisa: TfrmPesquisa
     Width = 257
     Height = 376
     Lines.Strings = (
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
       '')
     TabOrder = 0
   end

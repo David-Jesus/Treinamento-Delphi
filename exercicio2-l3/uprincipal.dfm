@@ -2,8 +2,8 @@ object frPesquisa: TfrPesquisa
   Left = 0
   Top = 0
   Caption = 'Sistema Pesquisa'
-  ClientHeight = 344
-  ClientWidth = 387
+  ClientHeight = 379
+  ClientWidth = 391
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,6 +12,7 @@ object frPesquisa: TfrPesquisa
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -24,9 +25,36 @@ object frPesquisa: TfrPesquisa
   object lbCivil: TLabel
     Left = 36
     Top = 190
-    Width = 118
+    Width = 107
     Height = 13
-    Caption = 'Informe seu estado civil:'
+    Caption = 'Informe o estado civil:'
+  end
+  object lbTotal: TLabel
+    Left = 8
+    Top = 349
+    Width = 127
+    Height = 16
+    Caption = 'Total de Registros: '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbTotalValor: TLabel
+    Left = 136
+    Top = 349
+    Width = 77
+    Height = 16
+    Caption = 'lbTotalValor'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Visible = False
   end
   object btAdicionar: TButton
     Left = 80
@@ -62,34 +90,34 @@ object frPesquisa: TfrPesquisa
   object rbViuvo: TRadioButton
     Left = 156
     Top = 250
-    Width = 57
+    Width = 61
     Height = 17
-    Caption = 'Viuvo'
+    Caption = 'Viuvo (a)'
     TabOrder = 6
   end
   object rbCasado: TRadioButton
     Left = 156
     Top = 189
-    Width = 62
+    Width = 73
     Height = 17
     Align = alCustom
-    Caption = 'Casado'
+    Caption = 'Casado (a)'
     TabOrder = 3
   end
   object rbSolteiro: TRadioButton
     Left = 156
     Top = 209
-    Width = 57
+    Width = 73
     Height = 17
-    Caption = 'Solteiro'
+    Caption = 'Solteiro (a)'
     TabOrder = 4
   end
   object rbDivorciado: TRadioButton
     Left = 156
     Top = 229
-    Width = 73
+    Width = 85
     Height = 17
-    Caption = 'Divorciado'
+    Caption = 'Divorciado (a)'
     TabOrder = 5
   end
   object rdgSexo: TRadioGroup

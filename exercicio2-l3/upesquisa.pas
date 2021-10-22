@@ -20,7 +20,7 @@ type
   end;
 
 var
-  frmPesquisa: TfrmPesquisa;
+  frmPesquisa      : TfrmPesquisa;
   wContador        ,
   wMaiorIdade      ,
   wMenorIdade      ,
@@ -57,17 +57,19 @@ procedure TfrmPesquisa.FormCreate(Sender: TObject);
        wContador := 0;
        wSoma     := 0;
 
-//       for Fpessoa in FListaPessoas do
-//         begin
-//           wSoma := wSoma  + Fpessoa.salario;
-//         end;
+       for wContador := 0 to (FListaPessoas.Count - 1) do
+         begin
+           wSoma := wSoma  + (Tpessoa(FListaPessoas.Items[wContador]).salario);
+         end;
 
-       repeat
-         wSoma := wSoma + TPessoa(FListaPessoas.Items[wContador]).salario;
-         wContador := wContador + 1;
-       until (wContador <= FListaPessoas.Count);
+//       repeat
+//         wSoma := wSoma + TPessoa(FListaPessoas.Items[wContador]).salario;
+//         wContador := wContador + 1;
+//       until (wContador <= FListaPessoas.Count);
 
        mmResultado.Lines[1] := FloatToStr(wSoma);
+       wMediaSalario := wSoma /  FListaPessoas.Count;
+       mmResultado.Lines[2] := FloatToStr(wMediaSalario);
 //       mmResultado.Lines[2] := wComp.ToString;
      end;
   end;

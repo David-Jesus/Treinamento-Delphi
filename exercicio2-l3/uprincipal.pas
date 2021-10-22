@@ -19,8 +19,11 @@ type
     rdgSexo: TRadioGroup;
     btPesquisa: TButton;
     lbCivil: TLabel;
+    lbTotal: TLabel;
+    lbTotalValor: TLabel;
     procedure btAdicionarClick(Sender: TObject);
     procedure btPesquisaClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
 
   private
     { Private declarations }
@@ -149,16 +152,10 @@ var
            rbDivorciado.Checked := false;
          end;
 
-//      fListaPessoas.(fPessoa);
-      FLista := TList.Create;
       FLista.Add(fPessoa);
-
-
       ShowMessage('Adicionado com sucesso!');
+      lbTotalValor.Caption := IntToStr(FLista.Count);
       ShowMessage(IntToStr(FLista.Count));
-
-//      for i := 0 to (FLista.Count - 1) do
-//         ShowMessage(TPessoa(FLista.Items[i]).estadoCivil);
 
     finally
       if Assigned(fPessoa) or Assigned(fListaPessoas) then
@@ -174,18 +171,29 @@ var
 
 procedure TfrPesquisa.btPesquisaClick(Sender: TObject);
   begin
-    try
-      wFormPesquisa  := TfrmPesquisa.Create(FLista);
-//       wFormPesquisa  := TfrmPesquisa.Create(nil);
-//       wFormPesquisa.ListaPessoas := FLista;
-       wFormPesquisa.ShowModal;
-    finally
-      if Assigned(fPessoa) or Assigned(fListaPessoas) then
-         begin
-//           FreeAndNil(fPessoa);
-//           FreeAndNil(fListaPessoas);
+    if FLista.Count = 0 then
+       MessageDlg('Aida não há registro, necessário realizar o cadastro!', mtWarning, [mbOK], 0)
+    else
+       begin
+         try
+           wFormPesquisa  := TfrmPesquisa.Create(FLista);
+           wFormPesquisa.ShowModal;
+         finally
+
+         if Assigned(fPessoa) or Assigned(fListaPessoas) then
+            begin
+//              FreeAndNil(fPessoa);
+//              FreeAndNil(fListaPessoas);
+            end;
          end;
-    end;
+       end;
+  end;
+
+procedure TfrPesquisa.FormCreate(Sender: TObject);
+  begin
+    FLista               := TList.Create;
+    lbTotalValor.Caption := IntToStr(FLista.Count);
+    lbTotalValor.Visible := true;
   end;
 
 end.
