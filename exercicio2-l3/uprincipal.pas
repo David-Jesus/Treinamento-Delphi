@@ -110,7 +110,7 @@ var
 
 
     try
-      fPessoa         := TPessoa.Create();
+      fPessoa         := TPessoa.Create;
       fPessoa.idade   := StrToInt(edIdade.Text);
       fPessoa.salario := StrToCurr(edSalario.Text);
 
@@ -153,7 +153,8 @@ var
          end;
 
       FLista.Add(fPessoa);
-      ShowMessage('Adicionado com sucesso!');
+      MessageDlg('Adicionado com sucesso!!', mtConfirmation, [mbOK], 0);
+//      ShowMessage('Adicionado com sucesso!');
       lbTotalValor.Caption := IntToStr(FLista.Count);
       ShowMessage(IntToStr(FLista.Count));
 
