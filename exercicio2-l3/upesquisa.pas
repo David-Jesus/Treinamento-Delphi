@@ -92,13 +92,13 @@ procedure TfrmPesquisa.FormCreate(Sender: TObject);
 
   begin
     if FListaPessoas <> nil then
-//       ShowMessage(filtro(FListaPessoas, '', ''));
-//      ShowMessage(TPessoa(FListaPessoas.Items[0]).sexo);
-//      lbResultadoPesquisa.Caption := filtro(ListaPessoas, '', '');
+      lbResultadoPesquisa.Caption := filtro(ListaPessoas, '', '');
       lbResultadoPesquisa.Font.Size := 10;
       lbFundo.Width   := 460;
       lbFundo.Height  := 360;
 
   end;
+
+
 
 end.

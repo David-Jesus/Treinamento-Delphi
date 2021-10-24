@@ -72,17 +72,15 @@ function  filtro(prListaPessoas: TList; prSexo, prEstadoCivil: String) : String;
                 begin
                   wPessoa :=  Tpessoa(prListaPessoas.Items[wContador]);
                   verificaFiltro(wPessoa);
-//                    verificaFiltro(prListaPessoas);
                 end;
            end
         else
-        if (prSexo <> '') and (prEstadoCivil <> '') then
+        if (prSexo <> '') or (prEstadoCivil <> '') then
            begin
              if (CompareStr(Tpessoa(prListaPessoas.Items[wContador]).sexo, prSexo) = 0) or (CompareStr(Tpessoa(prListaPessoas.Items[wContador]).estadoCivil, prEstadoCivil) = 0) then
                 begin
                   wPessoa :=  Tpessoa(prListaPessoas.Items[wContador]);
                   verificaFiltro(wPessoa);
-//                  verificaFiltro(prListaPessoas);
                 end;
            end
         else
@@ -91,9 +89,9 @@ function  filtro(prListaPessoas: TList; prSexo, prEstadoCivil: String) : String;
              verificaFiltro(wPessoa);
            end;
 
-           wContador := wContador + 1;
-
+        wContador := wContador + 1;
       end;
+
      wMediaSalario        := wSoma /  wContador;
 
      wResultado := wResultado + #13 +'Média de salário dentre os registros:--------------------------- R$' + FloatToStr(wMediaSalario);
@@ -112,12 +110,10 @@ function  filtro(prListaPessoas: TList; prSexo, prEstadoCivil: String) : String;
      wResultado := wResultado + #13 + 'Quantidade de pessoas na faixa etária acima de (89) anos:-  ' + IntToStr(wQtdPessoasFaixaAcima89);
      wContador := wContador + 1;
 
-
     if wQtdPessoasResponderam > 0 then
        Result := wResultado
     else
        Result := 'Sem resultados para este filtro.';
-
   end;
 
 procedure verificaFiltro(prPessoa : TPessoa);

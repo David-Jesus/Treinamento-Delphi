@@ -18,8 +18,9 @@ object frmPesquisa: TfrmPesquisa
   object lbFundo: TLabel
     Left = 33
     Top = 26
-    Width = 3
-    Height = 13
+    Width = 460
+    Height = 360
+    AutoSize = False
     Color = clActiveBorder
     ParentColor = False
     Transparent = False
@@ -39,8 +40,8 @@ object frmPesquisa: TfrmPesquisa
   end
   object lbResultadoPesquisa: TLabel
     AlignWithMargins = True
-    Left = 63
-    Top = 38
+    Left = 54
+    Top = 44
     Width = 98
     Height = 13
     Caption = 'lbResultadoPesquisa'
@@ -55,6 +56,7 @@ object frmPesquisa: TfrmPesquisa
     ParentShowHint = False
     ShowHint = False
     Transparent = True
+    OnClick = lbResultadoPesquisaClick
   end
   object rdgSexoFiltro: TRadioGroup
     Left = 559
