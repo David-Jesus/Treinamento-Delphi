@@ -4,8 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, listaPessoa, Pessoa, Vcl.StdCtrls,
-  Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, listaPessoa, Vcl.StdCtrls,
+  Vcl.ExtCtrls, uFiltro;
 
 type
   TfrPesquisa = class(TForm)
@@ -27,16 +27,20 @@ type
 
   private
     { Private declarations }
-    fListaPessoas : TListaPessoa;
     fIdade        : Integer;
     fSexo         ,
     fEstadoCivil  : String;
     fSalario      : Currency;
-    fPessoa       : TPessoa;
+//    fPessoa       : TPessoa;
     FLista        : TList;
 
   public
-    { Public declarations }
+    property Idade        : Integer read fIdade write fIdade;
+    property Sexo         : String read fSexo write fSexo;
+    property EstadoCivil  : String read fEstadoCivil write fEstadoCivil;
+    property Salario      : Currency read fSalario write fSalario;
+//    property ListaPessoas : TList read FLista write FLista;
+//    property Pessoa       : TPessoa read fPessoa write fPessoa;
   end;
 
 var
@@ -46,10 +50,11 @@ implementation
 
 {$R *.dfm}
 
-uses upesquisa;
+uses upesquisa, Pessoa;
 
 var
   wFormPesquisa : TfrmPesquisa;
+  fPessoa       : TPessoa;
 
 procedure TfrPesquisa.btAdicionarClick(Sender: TObject);
 var
@@ -152,15 +157,15 @@ var
            rbDivorciado.Checked := false;
          end;
 
+//      FLista.Add(fPessoa);
       FLista.Add(fPessoa);
       MessageDlg('Adicionado com sucesso!!', mtConfirmation, [mbOK], 0);
       lbTotalValor.Caption := IntToStr(FLista.Count);
 
     finally
-      if Assigned(fPessoa) or Assigned(fListaPessoas) then
+      if Assigned(fPessoa) then
          begin
 //           FreeAndNil(fPessoa);
-//           FreeAndNil(fListaPessoas);
          end;
 
     end;
@@ -173,13 +178,16 @@ procedure TfrPesquisa.btPesquisaClick(Sender: TObject);
     else
        begin
          try
+         ShowMessage(TPessoa(FLista.Items[0]).sexo);
            wFormPesquisa  := TfrmPesquisa.Create(FLista);
+//           wFormPesquisa := TfrmPesquisa.Create(nil);
+//           wFormPesquisa.ListaPessoas := ListaPessoas;
            wFormPesquisa.ShowModal;
          finally
 
-         if Assigned(fPessoa) or Assigned(fListaPessoas) then
-            begin
-//              FreeAndNil(fPessoa);
+           if Assigned(wFormPesquisa) then
+             begin
+               FreeAndNil(wFormPesquisa);
 //              FreeAndNil(fListaPessoas);
             end;
          end;
@@ -188,9 +196,17 @@ procedure TfrPesquisa.btPesquisaClick(Sender: TObject);
 
 procedure TfrPesquisa.FormCreate(Sender: TObject);
   begin
-    FLista               := TList.Create;
-    lbTotalValor.Caption := IntToStr(FLista.Count);
-    lbTotalValor.Visible := true;
+    try
+      FLista               := TList.Create;
+      lbTotalValor.Caption := IntToStr(FLista.Count);
+      lbTotalValor.Visible := true;
+    finally
+      if Assigned(FLista) then
+         begin
+//           FreeAndNil(FLista);
+         end;
+    end;
+
   end;
 
 end.

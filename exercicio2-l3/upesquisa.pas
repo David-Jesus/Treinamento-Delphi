@@ -22,30 +22,12 @@ type
     FListaPessoas: TList;
 
   public
-    constructor Create(prListaPessoa : TList);
+    constructor Create(prListaPessoa: TList);
     property ListaPessoas : TList read FListaPessoas write FListaPessoas;
   end;
 
 var
   frmPesquisa            : TfrmPesquisa;
-  wContador              ,
-  wMaiorIdade            ,
-  wMenorIdade            ,
-  wQtdPessoas            ,
-  wIdadeAComparar        ,
-  wQtdPessoasSalarip500  ,
-  wQtdPessoasFaixa19     ,
-  wQtdPessoasFaixa29     ,
-  wQtdPessoasFaixa39     ,
-  wQtdPessoasFaixa49     ,
-  wQtdPessoasFaixa59     ,
-  wQtdPessoasFaixa69     ,
-  wQtdPessoasFaixa79     ,
-  wQtdPessoasFaixa89     ,
-  wQtdPessoasFaixaAcima89: Integer;
-  wSoma             ,
-  wMediaSalario     ,
-  wSalarioAComparar : Currency;
   wSexo             ,
   wEstadoCivil      : String;
 
@@ -57,14 +39,21 @@ uses uFiltro;
 
 { TForm1 }
 
-
+//
 constructor TfrmPesquisa.Create(prListaPessoa: TList);
   begin
     inherited create(nil);
-    FListaPessoas := TList.Create;
-    if prListaPessoa <> nil then
-       FListaPessoas := prListaPessoa;
-  end;   
+
+//    try
+      FListaPessoas := TList.Create;
+      if prListaPessoa <> nil then
+         FListaPessoas := prListaPessoa;
+//    finally
+//      if Assigned(FListaPessoas) then
+////          FreeAndNil(FListaPessoas);
+//    end;
+
+  end;
 
 procedure TfrmPesquisa.btFiltrarClick(Sender: TObject);
   begin
@@ -93,19 +82,19 @@ procedure TfrmPesquisa.btFiltrarClick(Sender: TObject);
          wEstadoCivil  := '';
 
       lbResultadoPesquisa.Caption := '';
-      lbResultadoPesquisa.Caption := ''; 
-      lbResultadoPesquisa.Caption := ''; 
+//      ShowMessage(TPessoa(FListaPessoas.Items[0]).sexo);
       lbResultadoPesquisa.Caption :=  filtro(FListaPessoas, wSexo, wEstadoCivil);
 
 //    ShowMessage(filtro(FListaPessoas, wSexo, wEstadoCivil));
   end;
     
 procedure TfrmPesquisa.FormCreate(Sender: TObject);
-    
+
   begin
     if FListaPessoas <> nil then
 //       ShowMessage(filtro(FListaPessoas, '', ''));
-      lbResultadoPesquisa.Caption := filtro(FListaPessoas, '', '');
+//      ShowMessage(TPessoa(FListaPessoas.Items[0]).sexo);
+//      lbResultadoPesquisa.Caption := filtro(ListaPessoas, '', '');
       lbResultadoPesquisa.Font.Size := 10;
       lbFundo.Width   := 460;
       lbFundo.Height  := 360;
