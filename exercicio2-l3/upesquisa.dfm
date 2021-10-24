@@ -56,7 +56,6 @@ object frmPesquisa: TfrmPesquisa
     ParentShowHint = False
     ShowHint = False
     Transparent = True
-    OnClick = lbResultadoPesquisaClick
   end
   object rdgSexoFiltro: TRadioGroup
     Left = 559
@@ -102,5 +101,14 @@ object frmPesquisa: TfrmPesquisa
     Caption = 'Filtrar'
     TabOrder = 2
     OnClick = btFiltrarClick
+  end
+  object btLimparFiltro: TButton
+    Left = 656
+    Top = 239
+    Width = 75
+    Height = 33
+    Caption = 'Limpar'
+    TabOrder = 3
+    OnClick = btLimparFiltroClick
   end
 end

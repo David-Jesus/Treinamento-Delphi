@@ -178,17 +178,13 @@ procedure TfrPesquisa.btPesquisaClick(Sender: TObject);
     else
        begin
          try
-         ShowMessage(TPessoa(FLista.Items[0]).sexo);
+
            wFormPesquisa  := TfrmPesquisa.Create(FLista);
-//           wFormPesquisa := TfrmPesquisa.Create(nil);
-//           wFormPesquisa.ListaPessoas := ListaPessoas;
            wFormPesquisa.ShowModal;
          finally
-
            if Assigned(wFormPesquisa) then
              begin
                FreeAndNil(wFormPesquisa);
-//              FreeAndNil(fListaPessoas);
             end;
          end;
        end;
@@ -196,17 +192,9 @@ procedure TfrPesquisa.btPesquisaClick(Sender: TObject);
 
 procedure TfrPesquisa.FormCreate(Sender: TObject);
   begin
-    try
-      FLista               := TList.Create;
-      lbTotalValor.Caption := IntToStr(FLista.Count);
-      lbTotalValor.Visible := true;
-    finally
-      if Assigned(FLista) then
-         begin
-//           FreeAndNil(FLista);
-         end;
-    end;
-
+    FLista               := TList.Create;
+    lbTotalValor.Caption := IntToStr(FLista.Count);
+    lbTotalValor.Visible := true;
   end;
 
 end.

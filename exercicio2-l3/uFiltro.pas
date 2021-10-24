@@ -5,10 +5,8 @@ interface
   Vcl.Controls, Vcl.Forms, listaPessoa, Vcl.StdCtrls, Pessoa;
 
   function  filtro(prListaPessoas: TList; prSexo, prEstadoCivil: String) : String;
-
   procedure verificaFiltro(prPessoa : TPessoa);
-//    procedure verificaFiltro(prLista : Tlist);
-//
+
 implementation
 
 uses  upesquisa;
@@ -35,15 +33,14 @@ Var
   wSoma             ,
   wMediaSalario     ,
   wSalarioAComparar : Currency;
-  wSexo             ,
-  wEstadoCivil      : String;
-  wMemoResult       : TMemo;
+//  wSexo             ,
+//  wEstadoCivil      : String;
   wPessoa           : TPessoa;
 
 
 function  filtro(prListaPessoas: TList; prSexo, prEstadoCivil: String) : String;
   begin
-    wSoma             := 0;
+    wSoma                  := 0;
     wContador              := 0;
     wResultado             := '';
     wContador              := 0;
@@ -82,7 +79,7 @@ function  filtro(prListaPessoas: TList; prSexo, prEstadoCivil: String) : String;
                   wPessoa :=  Tpessoa(prListaPessoas.Items[wContador]);
                   verificaFiltro(wPessoa);
                 end;
-           end
+        end
         else
            begin
              wPessoa :=  Tpessoa(prListaPessoas.Items[wContador]);
@@ -92,7 +89,7 @@ function  filtro(prListaPessoas: TList; prSexo, prEstadoCivil: String) : String;
         wContador := wContador + 1;
       end;
 
-     wMediaSalario        := wSoma /  wContador;
+     wMediaSalario := wSoma /  wContador;
 
      wResultado := wResultado + #13 +'Média de salário dentre os registros:--------------------------- R$' + FloatToStr(wMediaSalario);
      wResultado := wResultado + #13#13 + 'Maior  idade dentre os registros:-------------------------------- ' + IntToStr(wMaiorIdade) + ' anos';
@@ -118,7 +115,6 @@ function  filtro(prListaPessoas: TList; prSexo, prEstadoCivil: String) : String;
 
 procedure verificaFiltro(prPessoa : TPessoa);
   begin
-
     if wQtdPessoasResponderam = 0 then
        begin
          wMaiorIdade       := prPessoa.idade;
@@ -165,8 +161,7 @@ procedure verificaFiltro(prPessoa : TPessoa);
     if wSalarioAComparar <= 500 then
     wQtdPessoasSalarip500 := wQtdPessoasSalarip500 + 1;
 
-  wQtdPessoasResponderam := wQtdPessoasResponderam + 1;
-
-end;
+    wQtdPessoasResponderam := wQtdPessoasResponderam + 1;
+  end;
 
 end.

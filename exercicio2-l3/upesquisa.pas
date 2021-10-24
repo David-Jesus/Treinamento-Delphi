@@ -15,8 +15,10 @@ type
     btFiltrar: TButton;
     lbResultadoPesquisa: TLabel;
     lbFundo: TLabel;
+    btLimparFiltro: TButton;
     procedure FormCreate(Sender: TObject);
     procedure btFiltrarClick(Sender: TObject);
+    procedure btLimparFiltroClick(Sender: TObject);
 
   private
     FListaPessoas: TList;
@@ -39,20 +41,18 @@ uses uFiltro;
 
 { TForm1 }
 
-//
+procedure TfrmPesquisa.btLimparFiltroClick(Sender: TObject);
+  begin
+    rdgSexoFiltro.ItemIndex        := -1;
+    rdgEstadoCivilFiltro.ItemIndex := -1;
+  end;
+
 constructor TfrmPesquisa.Create(prListaPessoa: TList);
   begin
     inherited create(nil);
-
-//    try
-      FListaPessoas := TList.Create;
-      if prListaPessoa <> nil then
-         FListaPessoas := prListaPessoa;
-//    finally
-//      if Assigned(FListaPessoas) then
-////          FreeAndNil(FListaPessoas);
-//    end;
-
+    FListaPessoas := TList.Create;
+    if prListaPessoa <> nil then
+       FListaPessoas := prListaPessoa;
   end;
 
 procedure TfrmPesquisa.btFiltrarClick(Sender: TObject);
@@ -82,23 +82,18 @@ procedure TfrmPesquisa.btFiltrarClick(Sender: TObject);
          wEstadoCivil  := '';
 
       lbResultadoPesquisa.Caption := '';
-//      ShowMessage(TPessoa(FListaPessoas.Items[0]).sexo);
       lbResultadoPesquisa.Caption :=  filtro(FListaPessoas, wSexo, wEstadoCivil);
-
-//    ShowMessage(filtro(FListaPessoas, wSexo, wEstadoCivil));
   end;
     
 procedure TfrmPesquisa.FormCreate(Sender: TObject);
-
   begin
     if FListaPessoas <> nil then
-      lbResultadoPesquisa.Caption := filtro(ListaPessoas, '', '');
-      lbResultadoPesquisa.Font.Size := 10;
-      lbFundo.Width   := 460;
-      lbFundo.Height  := 360;
-
+       begin
+         lbResultadoPesquisa.Caption := filtro(ListaPessoas, '', '');
+         lbResultadoPesquisa.Font.Size := 10;
+         lbFundo.Width   := 460;
+         lbFundo.Height  := 360;
+       end;
   end;
-
-
 
 end.
