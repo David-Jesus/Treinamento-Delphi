@@ -4,7 +4,6 @@ uses
   Vcl.Forms,
   uprincipal in 'uprincipal.pas' {frPesquisa},
   Pessoa in 'Pessoa.pas',
-  listaPessoa in 'listaPessoa.pas',
   upesquisa in 'upesquisa.pas' {frmPesquisa},
   uFiltro in 'uFiltro.pas';
 

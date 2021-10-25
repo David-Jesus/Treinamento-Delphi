@@ -26,26 +26,18 @@ type
   public
     constructor Create(prListaPessoa: TList);
     property ListaPessoas : TList read FListaPessoas write FListaPessoas;
-  end;
+end;
 
 var
-  frmPesquisa            : TfrmPesquisa;
-  wSexo             ,
-  wEstadoCivil      : String;
+  frmPesquisa  : TfrmPesquisa;
+  wSexo        ,
+  wEstadoCivil : String;
 
 implementation
 
 {$R *.dfm}
 
 uses uFiltro;
-
-{ TForm1 }
-
-procedure TfrmPesquisa.btLimparFiltroClick(Sender: TObject);
-  begin
-    rdgSexoFiltro.ItemIndex        := -1;
-    rdgEstadoCivilFiltro.ItemIndex := -1;
-  end;
 
 constructor TfrmPesquisa.Create(prListaPessoa: TList);
   begin
@@ -84,7 +76,13 @@ procedure TfrmPesquisa.btFiltrarClick(Sender: TObject);
       lbResultadoPesquisa.Caption := '';
       lbResultadoPesquisa.Caption :=  filtro(FListaPessoas, wSexo, wEstadoCivil);
   end;
-    
+
+procedure TfrmPesquisa.btLimparFiltroClick(Sender: TObject);
+  begin
+    rdgSexoFiltro.ItemIndex        := -1;
+    rdgEstadoCivilFiltro.ItemIndex := -1;
+  end;
+
 procedure TfrmPesquisa.FormCreate(Sender: TObject);
   begin
     if FListaPessoas <> nil then

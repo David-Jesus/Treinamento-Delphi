@@ -33,8 +33,6 @@ Var
   wSoma             ,
   wMediaSalario     ,
   wSalarioAComparar : Currency;
-//  wSexo             ,
-//  wEstadoCivil      : String;
   wPessoa           : TPessoa;
 
 
@@ -89,9 +87,9 @@ function  filtro(prListaPessoas: TList; prSexo, prEstadoCivil: String) : String;
         wContador := wContador + 1;
       end;
 
-     wMediaSalario := wSoma /  wContador;
+     wMediaSalario :=  wSoma /  wContador;
 
-     wResultado := wResultado + #13 +'Média de salário dentre os registros:--------------------------- R$' + FloatToStr(wMediaSalario);
+     wResultado := wResultado + #13 +'Média de salário dentre os registros:--------------------------- R$' + formatfloat('#0.00', wMediaSalario);
      wResultado := wResultado + #13#13 + 'Maior  idade dentre os registros:-------------------------------- ' + IntToStr(wMaiorIdade) + ' anos';
      wResultado := wResultado + #13 +'Menor idade dentre os registros:-------------------------------- ' + IntToStr(wMenorIdade)  + ' anos';
      wResultado := wResultado + #13#13 +'Quantidade de pessoas com salário até R$500,00------------- ' + IntToStr(wQtdPessoasSalarip500);

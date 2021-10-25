@@ -9,38 +9,31 @@ uses
 
 type
   TfrPesquisa = class(TForm)
-    btAdicionar: TButton;
-    edIdade: TLabeledEdit;
-    edSalario: TLabeledEdit;
-    rbViuvo: TRadioButton;
-    rbCasado: TRadioButton;
-    rbSolteiro: TRadioButton;
-    rbDivorciado: TRadioButton;
-    rdgSexo: TRadioGroup;
-    btPesquisa: TButton;
-    lbCivil: TLabel;
-    lbTotal: TLabel;
-    lbTotalValor: TLabel;
-    procedure btAdicionarClick(Sender: TObject);
-    procedure btPesquisaClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+   btAdicionar: TButton;
+   edIdade: TLabeledEdit;
+   edSalario: TLabeledEdit;
+   rbViuvo: TRadioButton;
+   rbCasado: TRadioButton;
+   rbSolteiro: TRadioButton;
+   rbDivorciado: TRadioButton;
+   rdgSexo: TRadioGroup;
+   btPesquisa: TButton;
+   lbCivil: TLabel;
+   lbTotal: TLabel;
+   lbTotalValor: TLabel;
+   procedure btAdicionarClick(Sender: TObject);
+   procedure btPesquisaClick(Sender: TObject);
+   procedure FormCreate(Sender: TObject);
 
   private
-    { Private declarations }
     fIdade        : Integer;
     fSexo         ,
     fEstadoCivil  : String;
     fSalario      : Currency;
-//    fPessoa       : TPessoa;
     FLista        : TList;
 
   public
-    property Idade        : Integer read fIdade write fIdade;
-    property Sexo         : String read fSexo write fSexo;
-    property EstadoCivil  : String read fEstadoCivil write fEstadoCivil;
-    property Salario      : Currency read fSalario write fSalario;
-//    property ListaPessoas : TList read FLista write FLista;
-//    property Pessoa       : TPessoa read fPessoa write fPessoa;
+
   end;
 
 var
@@ -57,8 +50,6 @@ var
   fPessoa       : TPessoa;
 
 procedure TfrPesquisa.btAdicionarClick(Sender: TObject);
-var
-  i: Integer;
   begin
     if (edIdade.Text = '') then
        begin
@@ -113,8 +104,6 @@ var
          Exit;
        end;
 
-
-    try
       fPessoa         := TPessoa.Create;
       fPessoa.idade   := StrToInt(edIdade.Text);
       fPessoa.salario := StrToCurr(edSalario.Text);
@@ -157,18 +146,9 @@ var
            rbDivorciado.Checked := false;
          end;
 
-//      FLista.Add(fPessoa);
       FLista.Add(fPessoa);
       MessageDlg('Adicionado com sucesso!!', mtConfirmation, [mbOK], 0);
       lbTotalValor.Caption := IntToStr(FLista.Count);
-
-    finally
-      if Assigned(fPessoa) then
-         begin
-//           FreeAndNil(fPessoa);
-         end;
-
-    end;
   end;
 
 procedure TfrPesquisa.btPesquisaClick(Sender: TObject);
