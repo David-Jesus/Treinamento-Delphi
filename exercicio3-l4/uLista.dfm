@@ -1,8 +1,8 @@
 object ListaRegistros: TListaRegistros
   Left = 0
   Top = 0
-  Width = 982
-  Height = 672
+  Width = 858
+  Height = 624
   AutoScroll = True
   Caption = 'Lista de Registros'
   Color = clBtnFace

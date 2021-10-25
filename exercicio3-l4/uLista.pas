@@ -30,6 +30,7 @@ var
   wValorResidencial          ,
   wValorComercial            ,
   wValorMaiorConta           ,
+  wTotalBrasilTelecom        ,
   wValorRural                : Currency;
   wTelefoneMaiorConta        : String;
 
@@ -47,10 +48,11 @@ constructor TListaRegistros.create(prListaRegistros: TList);
 
 procedure TListaRegistros.FormCreate(Sender: TObject);
   begin
-    wValorEct :=  fListaRegistros.Count * 1.55;
+    wValorMaiorConta :=  TAssinante(fListaRegistros.Items[0]).ValorConta;
     while wContador <= (fListaRegistros.Count - 1) do
        begin
-         wValorMaiorConta :=  TAssinante(fListaRegistros.Items[0]).ValorConta;
+
+         wTotalBrasilTelecom  := wTotalBrasilTelecom + TAssinante(fListaRegistros.Items[wContador]).ValorConta;
          if CompareStr(TAssinante(fListaRegistros.Items[wContador]).TipoTelefone, 'Residencial') = 0 then
             begin
               wTotalTelefonesResidenciais := wTotalTelefonesResidenciais + 1;
@@ -68,28 +70,27 @@ procedure TListaRegistros.FormCreate(Sender: TObject);
               wValorRural := wValorRural +  TAssinante(fListaRegistros.Items[wContador]).ValorConta;
             end;
 
-         if TAssinante(fListaRegistros.Items[wContador]).ValorConta > wValorMaiorConta then
+         if TAssinante(fListaRegistros.Items[wContador]).ValorConta >= wValorMaiorConta then
             begin
               wValorMaiorConta    := TAssinante(fListaRegistros.Items[wContador]).ValorConta;
               wTelefoneMaiorConta := TAssinante(fListaRegistros.Items[wContador]).NumeroTelefone;
             end;
 
-
-         wTotalTelegramas := wTotalTelegramas +  TAssinante(fListaRegistros.Items[wContador]).NumeroTelegramas;
+         wTotalTelegramas := wTotalTelegramas + TAssinante(fListaRegistros.Items[wContador]).NumeroTelegramas;
 
          memoListaRegistro.Lines[wLines] := 'Número de telefone' + TAssinante(fListaRegistros.Items[wContador]).NumeroTelefone;
-         wLines := wLines + 1;
+         Inc(wLines);
          memoListaRegistro.Lines[wLines] :=  'Valor da conta: '  + FloatToStr(TAssinante(fListaRegistros.Items[wContador]).ValorConta);
-         wLines := wLines + 1;
+         Inc(wLines);
          memoListaRegistro.Lines[wLines] := '';
-         wLines := wLines + 1;
-         wContador := wContador + 1;
+         Inc(wLines);
+         Inc(wContador);
 
        end;
 
-//       memoListaRegistro.Lines[0] := 'Número de telefone' + TAssinante(fListaRegistros.Items[0]).NumeroTelefone;
-//       memoListaRegistro.Lines[1] :=  'Valor da conta: '  + FloatToStr(TAssinante(fListaRegistros.Items[0]).ValorConta);
-//       memoListaRegistro.Lines[2] := '';
+       wValorEct :=  wTotalTelegramas * 1.55;
+       wTotalBrasilTelecom := wTotalBrasilTelecom - wValorEct;
+
        memoResultado.Lines[1] :=  'Total de telegramas: ' + IntToStr(wTotalTelegramas);
        memoResultado.Lines[2] := 'Total arrecado pela ECT:      ' + FloatToStr(wValorEct);
        memoResultado.Lines[3] := 'Total telefones Residenciais: ' + IntToStr(wTotalTelefonesResidenciais) + '   valor: R$' + FloatToStr(wValorResidencial);
@@ -97,8 +98,18 @@ procedure TListaRegistros.FormCreate(Sender: TObject);
        memoResultado.Lines[5] := 'Total telefones Rurais:       ' + IntToStr(wTotalTefonesRurais) + '           valor: R$' + FloatToStr(wValorRural);
        memoResultado.Lines[6] := '';
        memoResultado.Lines[7] := 'Valor da maior conta: R$ ' + FloatToStr(wValorMaiorConta) + '           Telefone: ' + wTelefoneMaiorConta;
+       memoResultado.Lines[8] := 'Valor arrecadado pela Brasil Telecom: R$ ' + FloatToStr(wTotalBrasilTelecom);
 
-
+       wLines              := 0;
+       wContador           := 0;
+       wValorEct           := 0;
+       wTotalTelegramas    := 0;
+       wValorResidencial   := 0;
+       wValorComercial     := 0;
+       wValorRural         := 0;
+       wValorMaiorConta    := 0;
+       wTotalBrasilTelecom := 0;
+       wTelefoneMaiorConta := '';
   end;
 
 end.

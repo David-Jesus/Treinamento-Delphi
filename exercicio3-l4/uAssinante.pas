@@ -23,8 +23,6 @@ interface
         property ServicosDespertador        : Integer  read fServicosDespertador write fServicosDespertador;
         property NumeroTelegramas           : Integer  read fNumeroTelegramas write fNumeroTelegramas;
         property ValorConta                 : Currency read fValorConta write fValorConta;
-
-
   end;
 
 implementation
