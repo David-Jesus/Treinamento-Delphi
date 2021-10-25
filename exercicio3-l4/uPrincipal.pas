@@ -27,8 +27,16 @@ type
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
-    fTipoTelefone    : String;
-    fListaAssinantes : TList;
+    fTipoTelefone                : String;
+    fCustoTelegrama              ,
+    fCustoDespertador            ,
+    fVlLigacaoLocal              ,
+    fVlLigacaoLocalComercial     ,
+    fVlLigacaoInterurbana        ,
+    fVlLigacaoInterurbanaComecial,
+    fValorConta                  : Currency;
+    fListaAssinantes             : TList;
+    fTotalMinutos                : Integer;
   public
     { Public declarations }
     property ListaAssinates : TList read fListaAssinantes;
@@ -114,6 +122,33 @@ procedure TfrFormulario.btCadastrarClick(Sender: TObject);
          rdgTipoTelefone.ItemIndex := -1;
        end;
 
+    fTotalMinutos  := StrToInt(edMinutosLocais.Text);
+    fTotalMinutos  := fTotalMinutos + StrToInt(edMinutosHorarioComercial.Text);
+    fTotalMinutos  := fTotalMinutos + StrToInt(edMinutosInterurbanos.Text);
+    fTotalMinutos  := fTotalMinutos + StrToInt(edMinutosinterurbanosComercial.Text);
+
+
+    if fTotalMinutos <= 50 then
+       fValorConta := 30
+    else
+    if fTotalMinutos <= 100 then
+       fValorConta := 40
+    else
+    if fTotalMinutos <= 150 then
+       fValorConta := 50
+    else
+    if fTotalMinutos <= 500 then
+       fValorConta := 90
+    else
+       fValorConta := 300;
+
+
+    fCustoTelegrama   := StrToInt(edTelegramas.Text) * 5.75;
+    fValorConta       := fValorConta + fCustoTelegrama;
+    fCustoDespertador := StrToInt(edServicoDespertador.Text) * 1.30;
+    fValorConta       := fValorConta + fCustoDespertador;
+
+
     wAssinante                            := TAssinante.Create;
     wAssinante.NumeroTelefone             := edNumeroTelefone.Text;
     wAssinante.TipoTelefone               := fTipoTelefone;
@@ -123,6 +158,8 @@ procedure TfrFormulario.btCadastrarClick(Sender: TObject);
     wAssinante.MinutosIterurbanoComercial := StrToInt(edMinutosinterurbanosComercial.Text);
     wAssinante.ServicosDespertador        := StrToInt(edServicoDespertador.Text);
     wAssinante.NumeroTelegramas           := StrToInt(edTelegramas.Text);
+    wAssinante.ValorConta                 := fValorConta;
+
 
     fListaAssinantes.Add(wAssinante);
     MessageDlg('Cadastrado com sucesso!' + #13#10#13#10, mtConfirmation, [mbOK], 0);
@@ -136,8 +173,6 @@ procedure TfrFormulario.btCadastrarClick(Sender: TObject);
     edServicoDespertador.Text           := '';
     edTelegramas.Text                   := '';
   end;
-
-
 
 procedure TfrFormulario.FormCreate(Sender: TObject);
   begin
@@ -159,9 +194,7 @@ procedure TfrFormulario.Button1Click(Sender: TObject);
            if Assigned(wFormListaRegistros) then
               FreeAndNil(wFormListaRegistros);
          end;
-
        end;
-
   end;
 
 procedure TfrFormulario.FormClose(Sender: TObject; var Action: TCloseAction);

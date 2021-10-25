@@ -2,8 +2,8 @@ object frFormulario: TfrFormulario
   Left = 0
   Top = 0
   Caption = 'Formul'#225'rio'
-  ClientHeight = 604
-  ClientWidth = 456
+  ClientHeight = 646
+  ClientWidth = 474
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -32,7 +32,7 @@ object frFormulario: TfrFormulario
   end
   object lbRegistros: TLabel
     Left = 24
-    Top = 563
+    Top = 595
     Width = 67
     Height = 16
     Caption = 'Registros:'
@@ -61,7 +61,7 @@ object frFormulario: TfrFormulario
   end
   object edMinutosLocais: TLabeledEdit
     Left = 232
-    Top = 205
+    Top = 213
     Width = 121
     Height = 21
     EditLabel.Width = 70
@@ -84,7 +84,7 @@ object frFormulario: TfrFormulario
   end
   object edMinutosHorarioComercial: TLabeledEdit
     Left = 232
-    Top = 259
+    Top = 267
     Width = 121
     Height = 21
     EditLabel.Width = 171
@@ -96,7 +96,7 @@ object frFormulario: TfrFormulario
   end
   object edMinutosInterurbanos: TLabeledEdit
     Left = 232
-    Top = 313
+    Top = 321
     Width = 121
     Height = 21
     EditLabel.Width = 100
@@ -108,7 +108,7 @@ object frFormulario: TfrFormulario
   end
   object edMinutosinterurbanosComercial: TLabeledEdit
     Left = 232
-    Top = 368
+    Top = 376
     Width = 121
     Height = 21
     EditLabel.Width = 203
@@ -120,7 +120,7 @@ object frFormulario: TfrFormulario
   end
   object edServicoDespertador: TLabeledEdit
     Left = 232
-    Top = 416
+    Top = 424
     Width = 121
     Height = 21
     EditLabel.Width = 176
@@ -132,7 +132,7 @@ object frFormulario: TfrFormulario
   end
   object edTelegramas: TLabeledEdit
     Left = 232
-    Top = 464
+    Top = 472
     Width = 121
     Height = 21
     EditLabel.Width = 119
@@ -144,7 +144,7 @@ object frFormulario: TfrFormulario
   end
   object btCadastrar: TButton
     Left = 131
-    Top = 512
+    Top = 520
     Width = 75
     Height = 33
     Caption = 'Cadastrar'
@@ -153,7 +153,7 @@ object frFormulario: TfrFormulario
   end
   object Button1: TButton
     Left = 280
-    Top = 512
+    Top = 520
     Width = 97
     Height = 33
     Caption = 'Verificar Registros'

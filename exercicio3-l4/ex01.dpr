@@ -12,6 +12,5 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrFormulario, frFormulario);
-  Application.CreateForm(TListaRegistros, Form1);
   Application.Run;
 end.
