@@ -158,7 +158,6 @@ procedure TfrPesquisa.btPesquisaClick(Sender: TObject);
     else
        begin
          try
-
            wFormPesquisa  := TfrmPesquisa.Create(FLista);
            wFormPesquisa.ShowModal;
          finally

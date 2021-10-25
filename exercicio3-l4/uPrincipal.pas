@@ -20,9 +20,11 @@ type
     edTelegramas: TLabeledEdit;
     btCadastrar: TButton;
     Button1: TButton;
+    lbRegistros: TLabel;
     procedure btCadastrarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
     fTipoTelefone    : String;
@@ -39,10 +41,11 @@ implementation
 
 {$R *.dfm}
 
-uses uAssinante;
+uses uAssinante , uLista;
 
 var
-  wAssinante : TAssinante;
+  wAssinante      : TAssinante;
+  wFormListaRegistros : TListaRegistros;
 
 procedure TfrFormulario.btCadastrarClick(Sender: TObject);
   begin
@@ -123,6 +126,7 @@ procedure TfrFormulario.btCadastrarClick(Sender: TObject);
 
     fListaAssinantes.Add(wAssinante);
     MessageDlg('Cadastrado com sucesso!' + #13#10#13#10, mtConfirmation, [mbOK], 0);
+    lbRegistros.Caption := 'Total de registros: ' + IntToStr(fListaAssinantes.Count);
 
     edNumeroTelefone.Text               := '';
     edMinutosLocais.Text                := '';
@@ -138,6 +142,26 @@ procedure TfrFormulario.btCadastrarClick(Sender: TObject);
 procedure TfrFormulario.FormCreate(Sender: TObject);
   begin
     fListaAssinantes := Tlist.Create;
+    lbRegistros.Caption := 'Total de registros: ' + IntToStr(fListaAssinantes.Count);
+    lbRegistros.Visible := true;
+  end;
+
+procedure TfrFormulario.Button1Click(Sender: TObject);
+  begin
+    if fListaAssinantes.Count = 0 then
+       MessageDlg('Aida não há registro, necessário novos cadastros!', mtWarning, [mbOK], 0)
+    else
+       begin
+         try
+           wFormListaRegistros := TListaRegistros.Create(fListaAssinantes);
+           wFormListaRegistros.ShowModal;
+         finally
+           if Assigned(wFormListaRegistros) then
+              FreeAndNil(wFormListaRegistros);
+         end;
+
+       end;
+
   end;
 
 procedure TfrFormulario.FormClose(Sender: TObject; var Action: TCloseAction);

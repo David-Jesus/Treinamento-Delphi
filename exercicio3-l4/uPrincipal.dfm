@@ -2,8 +2,8 @@ object frFormulario: TfrFormulario
   Left = 0
   Top = 0
   Caption = 'Formul'#225'rio'
-  ClientHeight = 569
-  ClientWidth = 517
+  ClientHeight = 604
+  ClientWidth = 456
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -29,6 +29,23 @@ object frFormulario: TfrFormulario
     Width = 87
     Height = 13
     Caption = 'Tipo de Telefone: '
+  end
+  object lbRegistros: TLabel
+    Left = 24
+    Top = 563
+    Width = 67
+    Height = 16
+    Caption = 'Registros:'
+    Color = clSilver
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = True
+    Visible = False
   end
   object edNumeroTelefone: TLabeledEdit
     Left = 232
@@ -126,7 +143,7 @@ object frFormulario: TfrFormulario
     TabOrder = 7
   end
   object btCadastrar: TButton
-    Left = 232
+    Left = 131
     Top = 512
     Width = 75
     Height = 33
@@ -135,11 +152,12 @@ object frFormulario: TfrFormulario
     OnClick = btCadastrarClick
   end
   object Button1: TButton
-    Left = 320
+    Left = 280
     Top = 512
     Width = 97
     Height = 33
     Caption = 'Verificar Registros'
     TabOrder = 9
+    OnClick = Button1Click
   end
 end
