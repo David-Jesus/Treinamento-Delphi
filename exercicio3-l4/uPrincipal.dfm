@@ -2,7 +2,7 @@ object frFormulario: TfrFormulario
   Left = 0
   Top = 0
   Caption = 'Formul'#225'rio'
-  ClientHeight = 628
+  ClientHeight = 661
   ClientWidth = 555
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,14 +16,7 @@ object frFormulario: TfrFormulario
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
-    Left = 227
-    Top = 75
-    Width = 3
-    Height = 13
-    Caption = ' '
-  end
-  object Label2: TLabel
+  object lbTipoTelefone: TLabel
     Left = 170
     Top = 83
     Width = 87
@@ -32,7 +25,7 @@ object frFormulario: TfrFormulario
   end
   object lbRegistros: TLabel
     Left = 48
-    Top = 587
+    Top = 635
     Width = 67
     Height = 16
     Caption = 'Registros:'
@@ -46,6 +39,13 @@ object frFormulario: TfrFormulario
     ParentFont = False
     Transparent = True
     Visible = False
+  end
+  object lbPacote: TLabel
+    Left = 156
+    Top = 188
+    Width = 94
+    Height = 13
+    Caption = 'Selecione o pacote:'
   end
   object edNumeroTelefone: TLabeledEdit
     Left = 256
@@ -61,7 +61,7 @@ object frFormulario: TfrFormulario
   end
   object edMinutosLocais: TLabeledEdit
     Left = 256
-    Top = 205
+    Top = 277
     Width = 121
     Height = 21
     EditLabel.Width = 70
@@ -84,7 +84,7 @@ object frFormulario: TfrFormulario
   end
   object edMinutosHorarioComercial: TLabeledEdit
     Left = 256
-    Top = 259
+    Top = 331
     Width = 121
     Height = 21
     EditLabel.Width = 171
@@ -96,7 +96,7 @@ object frFormulario: TfrFormulario
   end
   object edMinutosInterurbanos: TLabeledEdit
     Left = 256
-    Top = 313
+    Top = 385
     Width = 121
     Height = 21
     EditLabel.Width = 100
@@ -108,7 +108,7 @@ object frFormulario: TfrFormulario
   end
   object edMinutosinterurbanosComercial: TLabeledEdit
     Left = 256
-    Top = 368
+    Top = 440
     Width = 121
     Height = 21
     EditLabel.Width = 203
@@ -120,7 +120,7 @@ object frFormulario: TfrFormulario
   end
   object edServicoDespertador: TLabeledEdit
     Left = 256
-    Top = 416
+    Top = 488
     Width = 121
     Height = 21
     EditLabel.Width = 176
@@ -132,7 +132,7 @@ object frFormulario: TfrFormulario
   end
   object edTelegramas: TLabeledEdit
     Left = 256
-    Top = 464
+    Top = 536
     Width = 121
     Height = 21
     EditLabel.Width = 119
@@ -144,7 +144,7 @@ object frFormulario: TfrFormulario
   end
   object btCadastrar: TButton
     Left = 155
-    Top = 512
+    Top = 584
     Width = 75
     Height = 33
     Caption = 'Cadastrar'
@@ -153,11 +153,25 @@ object frFormulario: TfrFormulario
   end
   object Button1: TButton
     Left = 304
-    Top = 512
+    Top = 584
     Width = 97
     Height = 33
     Caption = 'Verificar Registros'
     TabOrder = 9
     OnClick = Button1Click
+  end
+  object rdgPacote: TRadioGroup
+    Left = 256
+    Top = 188
+    Width = 185
+    Height = 73
+    Columns = 2
+    Items.Strings = (
+      'B'#225'sico'
+      'Normal'
+      'Avan'#231'ado'
+      'Master'
+      'Master Plus')
+    TabOrder = 10
   end
 end

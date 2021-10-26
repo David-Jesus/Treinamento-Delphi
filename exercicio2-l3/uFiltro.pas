@@ -124,40 +124,40 @@ procedure verificaFiltro(prPessoa : TPessoa);
     wSalarioAComparar := prPessoa.salario;
 
     if (prPessoa.idade > wMaiorIdade) then
-    wMaiorIdade  := prPessoa.idade;
+       wMaiorIdade  := prPessoa.idade;
 
     if (prPessoa.idade) < wMenorIdade then
-    wMenorIdade  := prPessoa.idade;
+       wMenorIdade  := prPessoa.idade;
 
     if (wIdadeAComparar <= 19) then
-    wQtdPessoasFaixa19 := wQtdPessoasFaixa19 + 1;
+       wQtdPessoasFaixa19 := wQtdPessoasFaixa19 + 1;
 
     if (wIdadeAComparar > 19) and (wIdadeAComparar <= 29 ) then
-    wQtdPessoasFaixa29 := wQtdPessoasFaixa29 + 1;
+       wQtdPessoasFaixa29 := wQtdPessoasFaixa29 + 1;
 
     if (wIdadeAComparar > 29) and (wIdadeAComparar <= 39 ) then
-    wQtdPessoasFaixa39 := wQtdPessoasFaixa39 + 1;
+       wQtdPessoasFaixa39 := wQtdPessoasFaixa39 + 1;
 
     if (wIdadeAComparar > 39) and (wIdadeAComparar <= 49 ) then
-    wQtdPessoasFaixa49 := wQtdPessoasFaixa49 + 1;
+       wQtdPessoasFaixa49 := wQtdPessoasFaixa49 + 1;
 
     if (wIdadeAComparar > 49) and (wIdadeAComparar <= 59 ) then
-    wQtdPessoasFaixa59 := wQtdPessoasFaixa59 + 1;
+       wQtdPessoasFaixa59 := wQtdPessoasFaixa59 + 1;
 
     if (wIdadeAComparar > 59) and (wIdadeAComparar <= 69 ) then
-    wQtdPessoasFaixa69 := wQtdPessoasFaixa69 + 1;
+       wQtdPessoasFaixa69 := wQtdPessoasFaixa69 + 1;
 
     if (wIdadeAComparar > 69) and (wIdadeAComparar <= 79 ) then
-    wQtdPessoasFaixa79 := wQtdPessoasFaixa79 + 1;
+       wQtdPessoasFaixa79 := wQtdPessoasFaixa79 + 1;
 
     if (wIdadeAComparar > 79) and (wIdadeAComparar <= 89 ) then
-    wQtdPessoasFaixa89 := wQtdPessoasFaixa89 + 1;
+       wQtdPessoasFaixa89 := wQtdPessoasFaixa89 + 1;
 
     if (wIdadeAComparar > 89) then
-    wQtdPessoasFaixaAcima89 := wQtdPessoasFaixaAcima89 + 1;
+       wQtdPessoasFaixaAcima89 := wQtdPessoasFaixaAcima89 + 1;
 
     if wSalarioAComparar <= 500 then
-    wQtdPessoasSalarip500 := wQtdPessoasSalarip500 + 1;
+       wQtdPessoasSalarip500 := wQtdPessoasSalarip500 + 1;
 
     wQtdPessoasResponderam := wQtdPessoasResponderam + 1;
   end;

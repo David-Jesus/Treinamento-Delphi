@@ -2,7 +2,7 @@ object ListaRegistros: TListaRegistros
   Left = 0
   Top = 0
   Width = 858
-  Height = 624
+  Height = 422
   AutoScroll = True
   Caption = 'Lista de Registros'
   Color = clBtnFace
@@ -20,7 +20,7 @@ object ListaRegistros: TListaRegistros
     Left = 24
     Top = 40
     Width = 409
-    Height = 521
+    Height = 297
     Lines.Strings = (
       ''
       ''
@@ -75,7 +75,7 @@ object ListaRegistros: TListaRegistros
     Left = 439
     Top = 40
     Width = 378
-    Height = 521
+    Height = 297
     Lines.Strings = (
       
         '                                                         Resulta' +
