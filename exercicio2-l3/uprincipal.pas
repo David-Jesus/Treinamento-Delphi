@@ -9,21 +9,21 @@ uses
 
 type
   TfrPesquisa = class(TForm)
-   btAdicionar: TButton;
-   edIdade: TLabeledEdit;
-   edSalario: TLabeledEdit;
-   rbViuvo: TRadioButton;
-   rbCasado: TRadioButton;
-   rbSolteiro: TRadioButton;
-   rbDivorciado: TRadioButton;
-   rdgSexo: TRadioGroup;
-   btPesquisa: TButton;
-   lbCivil: TLabel;
-   lbTotal: TLabel;
-   lbTotalValor: TLabel;
-   procedure btAdicionarClick(Sender: TObject);
-   procedure btPesquisaClick(Sender: TObject);
-   procedure FormCreate(Sender: TObject);
+  btAdicionar: TButton;
+  edIdade: TLabeledEdit;
+  edSalario: TLabeledEdit;
+  rbViuvo: TRadioButton;
+  rbCasado: TRadioButton;
+  rbSolteiro: TRadioButton;
+  rbDivorciado: TRadioButton;
+  rdgSexo: TRadioGroup;
+  btPesquisa: TButton;
+  lbCivil: TLabel;
+  lbTotal: TLabel;
+  lbTotalValor: TLabel;
+  procedure btAdicionarClick(Sender: TObject);
+  procedure btPesquisaClick(Sender: TObject);
+  procedure FormCreate(Sender: TObject);
 
   private
     fIdade        : Integer;
@@ -34,7 +34,7 @@ type
 
   public
 
-  end;
+end;
 
 var
   frPesquisa : TfrPesquisa;
