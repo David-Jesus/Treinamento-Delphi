@@ -66,15 +66,13 @@ begin
          exit;
        end;
 
-    if (FNotaReposicao > FNota1) and (FNota1 < FNota2) then
+    if (FNotaReposicao > FNota1) and (FNota1 < FNota2) and (FNota1 < FNota3) then
        Nota1 := FNotaReposicao
     else
     if (FNotaReposicao > FNota2) and (FNota2 < FNota3) then
        Nota2 := FNotaReposicao
     else
     if FNotaReposicao > FNota3 then
-       Nota3 := FNotaReposicao
-    else
        Nota3 := FNotaReposicao;
 
     FMedia := (FNota1 + FNota2 + FNota3) / 3;

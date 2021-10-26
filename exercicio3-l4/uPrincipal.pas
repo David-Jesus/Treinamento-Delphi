@@ -272,8 +272,6 @@ procedure TfrFormulario.Button1Click(Sender: TObject);
     else
        begin
          try
-//           ShowMessage(Format('Tetes                   %d', [1]));
-//           exit;
            wFormListaRegistros := TListaRegistros.Create(fListaAssinantes);
            wFormListaRegistros.ShowModal;
          finally

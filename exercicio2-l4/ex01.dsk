@@ -18,10 +18,6 @@ EditWindowCount=1
 [C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio2-l4\ex01.dproj]
 ModuleType=TBaseProject
 
-[C:\Users\progweb03\Desktop\treianmento\exercicio2-l4\upricipal.pas]
-FormState=1
-FormOnTop=0
-
 [EditWindow0]
 ViewCount=1
 CurrentEditView=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio2-l4\ex01.dpr
@@ -58,7 +54,7 @@ BottomMiddelPanelData=0000080001020200000009000000446F636B5369746530100000004772
 [View0]
 CustomEditViewType=TEditView
 Module=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\exercicio2-l4\ex01.dpr
-CursorX=49
+CursorX=50
 CursorY=14
 TopLine=1
 LeftCol=1

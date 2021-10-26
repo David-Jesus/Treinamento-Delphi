@@ -104,51 +104,51 @@ procedure TfrPesquisa.btAdicionarClick(Sender: TObject);
          Exit;
        end;
 
-      fPessoa         := TPessoa.Create;
-      fPessoa.idade   := StrToInt(edIdade.Text);
-      fPessoa.salario := StrToCurr(edSalario.Text);
+    fPessoa         := TPessoa.Create;
+    fPessoa.idade   := StrToInt(edIdade.Text);
+    fPessoa.salario := StrToCurr(edSalario.Text);
 
-      edIdade.Text   := '';
-      edSalario.Text := '';
+    edIdade.Text   := '';
+    edSalario.Text := '';
 
-      if (rdgSexo.ItemIndex = 0) then
-         begin
-           fPessoa.sexo := 'Mulher';
-           rdgSexo.ItemIndex := -1;
-         end
+    if (rdgSexo.ItemIndex = 0) then
+       begin
+         fPessoa.sexo := 'Mulher';
+         rdgSexo.ItemIndex := -1;
+       end
 
-      else
-         begin
-           fPessoa.sexo := 'Homen';
-           rdgSexo.ItemIndex := -1;
-         end;
+    else
+       begin
+         fPessoa.sexo := 'Homen';
+         rdgSexo.ItemIndex := -1;
+       end;
 
-      if (rbCasado.Checked) then
-         begin
-           fPessoa.estadoCivil := 'Casado';
-           rbCasado.Checked    := false;
-         end
-      else
-      if (rbViuvo.Checked) then
-         begin
-           fPessoa.estadoCivil := 'Viúvo';
-           rbViuvo.Checked     := false;
-         end
-      else
-      if  (rbSolteiro.Checked) then
-         begin
-            fPessoa.estadoCivil := 'Solteiro';
-            rbSolteiro.Checked  := false;
-         end
-      else
-         begin
-           fPessoa.estadoCivil  := 'Divorciado';
-           rbDivorciado.Checked := false;
-         end;
+    if (rbCasado.Checked) then
+       begin
+         fPessoa.estadoCivil := 'Casado';
+         rbCasado.Checked    := false;
+       end
+    else
+    if (rbViuvo.Checked) then
+       begin
+         fPessoa.estadoCivil := 'Viúvo';
+         rbViuvo.Checked     := false;
+       end
+    else
+    if  (rbSolteiro.Checked) then
+       begin
+          fPessoa.estadoCivil := 'Solteiro';
+          rbSolteiro.Checked  := false;
+       end
+    else
+       begin
+         fPessoa.estadoCivil  := 'Divorciado';
+         rbDivorciado.Checked := false;
+       end;
 
-      FLista.Add(fPessoa);
-      MessageDlg('Adicionado com sucesso!!', mtConfirmation, [mbOK], 0);
-      lbTotalValor.Caption := IntToStr(FLista.Count);
+    FLista.Add(fPessoa);
+    MessageDlg('Adicionado com sucesso!!', mtConfirmation, [mbOK], 0);
+    lbTotalValor.Caption := IntToStr(FLista.Count);
   end;
 
 procedure TfrPesquisa.btPesquisaClick(Sender: TObject);

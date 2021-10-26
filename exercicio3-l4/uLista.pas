@@ -95,15 +95,15 @@ procedure TListaRegistros.FormCreate(Sender: TObject);
     wTotalBrasilTelecom := wTotalBrasilTelecom - wValorEct;
 
     memoResultado.Lines[1] := 'Total de telegramas: -------------' + IntToStr(wTotalTelegramas);
-    memoResultado.Lines[2] := 'Total telefones Residenciais:----' + IntToStr(wTotalTelefonesResidenciais) + '---------valor: R$' + FloatToStr(wValorResidencial);
-    memoResultado.Lines[3] := 'Total telefones Comerciais:-----' + IntToStr(wTotalTelefoneComerciais) + '----------valor: R$' + FloatToStr(wValorComercial);
-    memoResultado.Lines[4] := 'Total telefones Rurais:------------' + IntToStr(wTotalTefonesRurais) + '--------valor: R$' + FloatToStr(wValorRural);
+    memoResultado.Lines[2] := 'Total telefones Residenciais:----' + IntToStr(wTotalTelefonesResidenciais) + '---------valor: R$ ' + FloatToStr(wValorResidencial);
+    memoResultado.Lines[3] := 'Total telefones Comerciais:------' + IntToStr(wTotalTelefoneComerciais) + '----------valor: R$ ' + FloatToStr(wValorComercial);
+    memoResultado.Lines[4] := 'Total telefones Rurais:------------' + IntToStr(wTotalTefonesRurais) + '--------valor: R$'  + FloatToStr(wValorRural);
     memoResultado.Lines[5] := 'Total arrecado pela ECT:-------------------valorR$' + FloatToStr(wValorEct);
     memoResultado.Lines[6] := '';
     memoResultado.Lines[7] := 'Valor da maior conta: R$ ' + FloatToStr(wValorMaiorConta) + '    Telefone: ' + wTelefoneMaiorConta;
     memoResultado.Lines[8] := 'Valor arrecadado pela Brasil Telecom: R$ ' + FloatToStr(wTotalBrasilTelecom);
     memoResultado.Lines[9] := '';
-    memoResultado.Lines[10] := 'Total de Iterurbano:---------' + IntToStr(wQtdInterUrbano) + '--minutos--valor: R$' + FloatToStr(wValorinterUrbano);
+    memoResultado.Lines[10] := 'Total de Iterurbano:---------' + IntToStr(wQtdInterUrbano) + '--minutos--valor: R$ ' + FloatToStr(wValorinterUrbano);
 
     wLines              := 0;
     wContador           := 0;

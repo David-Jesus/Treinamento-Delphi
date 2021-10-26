@@ -124,12 +124,12 @@ begin
 
                             if wAuxiliar[2] = '' then
                                wCentavos := ''
-                          else
-                        wCentavos := wCentavos + cUnidades[StrToInt(wAuxiliar[2])];
+                            else
+                               wCentavos := wCentavos + cUnidades[StrToInt(wAuxiliar[2])];
+                          end;
                      end;
                  end;
             end;
-         end;
 
          if wMilhar  <>  '' then
             wTexto := wTexto + wMilhar;

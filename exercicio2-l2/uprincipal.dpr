@@ -40,7 +40,7 @@ begin
            if wTentativas = 1 then
               Writeln('Você excedeu o número máximo de tentativas, programa finalizado.')
            else
-             Writeln('Programa finalizado.');
+              Writeln('Programa finalizado.');
 
            Writeln('Pressione Enter para sair');
            Readln;
@@ -56,13 +56,13 @@ begin
               Break;
          end
       else
-        begin
-          wTentativas := wTentativas - 1;
-          WriteLn('');
-          Write('Digite apenas números positivos, você tem: ' + IntToStr(wTentativas) + ' tentativas');
-          Writeln;
-          WriteLn('');
-        end;
+         begin
+           wTentativas := wTentativas - 1;
+           WriteLn('');
+           Write('Digite apenas números positivos, você tem: ' + IntToStr(wTentativas) + ' tentativas');
+           Writeln;
+           WriteLn('');
+         end;
     end;
 
   wContador := 0;
@@ -84,18 +84,18 @@ begin
       wContador := wContador + 1;
     end;
 
-    wContador := 0;
-    wSoma     := 0;
-    while wContador <= (Length(wNumeros) -1 ) do
-      begin
-        wSoma := wSoma + wNumeros[wContador];
-        if wNumeros[wContador] = wMaior then
-           wQtdVezesMaior := wQtdVezesMaior + 1;
-        if wNumeros[wContador]  = wMenor then
-           wQtdVezesMenor := wQtdVezesMenor + 1;
+  wContador := 0;
+  wSoma     := 0;
+  while wContador <= (Length(wNumeros) -1 ) do
+    begin
+      wSoma := wSoma + wNumeros[wContador];
+      if wNumeros[wContador] = wMaior then
+         wQtdVezesMaior := wQtdVezesMaior + 1;
+      if wNumeros[wContador]  = wMenor then
+         wQtdVezesMenor := wQtdVezesMenor + 1;
 
-        wContador := wContador + 1;
-      end;
+      wContador := wContador + 1;
+    end;
 
   wMedia := wSoma / Length(wNumeros);
 

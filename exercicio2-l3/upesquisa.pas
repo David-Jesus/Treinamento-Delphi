@@ -26,7 +26,7 @@ type
   public
     constructor Create(prListaPessoa: TList);
     property ListaPessoas : TList read FListaPessoas write FListaPessoas;
-end;
+  end;
 
 var
   frmPesquisa  : TfrmPesquisa;
