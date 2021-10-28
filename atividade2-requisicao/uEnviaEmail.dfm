@@ -12,8 +12,6 @@ object frEnvioEmail: TfrEnvioEmail
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
-  OnClose = FormClose
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -36,15 +34,15 @@ object frEnvioEmail: TfrEnvioEmail
     Width = 545
     Height = 225
     AutoSize = False
-    TabOrder = 0
+    TabOrder = 1
   end
   object btEnviar: TButton
-    Left = 304
-    Top = 344
-    Width = 97
-    Height = 33
+    Left = 296
+    Top = 352
+    Width = 105
+    Height = 41
     Caption = 'Enviar'
-    TabOrder = 1
+    TabOrder = 2
     OnClick = btEnviarClick
   end
   object edEmail: TEdit
@@ -52,6 +50,6 @@ object frEnvioEmail: TfrEnvioEmail
     Top = 56
     Width = 265
     Height = 21
-    TabOrder = 2
+    TabOrder = 0
   end
 end

@@ -13,9 +13,7 @@ type
     edEmail: TEdit;
     Label1: TLabel;
     Label2: TLabel;
-    procedure FormCreate(Sender: TObject);
     procedure btEnviarClick(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     FTeste      ,
     FValidaEnvio: String;
@@ -40,36 +38,7 @@ implementation
 
 procedure TfrEnvioEmail.btEnviarClick(Sender: TObject);
   begin
-    try
-      FHTTP.AbrirRequisicao('http://intranet.sci.com.br/mailSendDo.php', tprPOST);
-      FHTTP.EnviarRequisicao;
-
-      FValidaEnvio := Copy(FHTTP.ResponseText, Pos('Mensagem enviada com Sucesso!!!', FHTTP.ResponseText), MaxInt);
-
-      if (FValidaEnvio.Length > 0) then
-         begin
-           ShowMessage('Email enviado com sucesso!');
-           Edit1.Text := '';
-           edEmail    := '';
-         end
-
-      else
-         ShowMessage('Erro ao encaminhar o e-mail!');
-
-    finally
-      FHTTP.OnAntesEnviarRequisicao := nil;
-    end;
-  end;
-
-constructor TfrEnvioEmail.Create(prFHTTP: THTTPComCertificadoBase);
-  begin
-    inherited Create(nil);
-    FHTTP :=  prFHTTP;
-  end;
-
-procedure TfrEnvioEmail.FormCreate(Sender: TObject);
-  begin
-    try
+  try
       FHTTP.OnAntesEnviarRequisicao := OnLogado;
       FHTTP.AbrirRequisicao('http://intranet.sci.com.br/cleanGrid.php?source=mailSend.php');
       FHTTP.EnviarRequisicao;
@@ -124,7 +93,33 @@ procedure TfrEnvioEmail.FormCreate(Sender: TObject);
 
     end;
 
+    try
+      FHTTP.AbrirRequisicao('http://intranet.sci.com.br/mailSendDo.php', tprPOST);
+      FHTTP.EnviarRequisicao;
+
+      FValidaEnvio := Copy(FHTTP.ResponseText, Pos('Mensagem enviada com Sucesso!!!', FHTTP.ResponseText), MaxInt);
+
+      if (FValidaEnvio.Length > 0) then
+         begin
+           ShowMessage('Email enviado com sucesso!');
+           Edit1.Text   := '';
+           edEmail.text := '';
+         end
+
+      else
+         ShowMessage('Erro ao encaminhar o e-mail!');
+
+    finally
+      FHTTP.OnAntesEnviarRequisicao := nil;
+    end;
   end;
+
+constructor TfrEnvioEmail.Create(prFHTTP: THTTPComCertificadoBase);
+  begin
+    inherited Create(nil);
+    FHTTP :=  prFHTTP;
+  end;
+
 
 procedure TfrEnvioEmail.OnSelecionarColaborador(var prData: String);
   begin
