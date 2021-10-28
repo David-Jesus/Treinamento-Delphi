@@ -79,7 +79,7 @@ procedure TListaRegistros.FormCreate(Sender: TObject);
              wTelefoneMaiorConta := TAssinante(fListaRegistros.Items[wContador]).NumeroTelefone;
            end;
 
-        wTotalTelegramas  := wTotalTelegramas + TAssinante(fListaRegistros.Items[wContador]).NumeroTelegramas;
+        wTotalTelegramas  :=  wTotalTelegramas + TAssinante(fListaRegistros.Items[wContador]).NumeroTelegramas;
         wQtdInterUrbano   :=  TAssinante(fListaRegistros.Items[wContador]).MinutosInterurbanos;
         wValorinterUrbano :=  wValorinterUrbano + TAssinante(fListaRegistros.Items[wContador]).ValorInterurbano;
         memoListaRegistro.Lines[wLines] := 'Número de telefone: ' + TAssinante(fListaRegistros.Items[wContador]).NumeroTelefone;

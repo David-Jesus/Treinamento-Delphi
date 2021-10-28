@@ -232,16 +232,16 @@ procedure TfrFormulario.btCadastrarClick(Sender: TObject);
     fValorInterUrbano   := fValorInterUrbanoComercial + fValorInterUrbano;
     fMinutoaInterUrbano := StrToInt(edMinutosinterurbanosComercial.Text) + StrToInt(edMinutosInterurbanos.Text);
 
-    wAssinante                            := TAssinante.Create;
-    wAssinante.NumeroTelefone             := edNumeroTelefone.Text;
-    wAssinante.TipoTelefone               := fTipoTelefone;
-    wAssinante.MinutosLocais              := StrToInt(edMinutosLocais.Text);
-    wAssinante.MinutosLocaisComercial     := StrToInt(edMinutosHorarioComercial.Text);
-    wAssinante.MinutosInterurbanos        := fMinutoaInterUrbano;
-    wAssinante.ValorInterurbano           := fValorInterUrbano;
-    wAssinante.ServicosDespertador        := StrToInt(edServicoDespertador.Text);
-    wAssinante.NumeroTelegramas           := StrToInt(edTelegramas.Text);
-    wAssinante.ValorConta                 := fValorConta;
+    wAssinante                        := TAssinante.Create;
+    wAssinante.NumeroTelefone         := edNumeroTelefone.Text;
+    wAssinante.TipoTelefone           := fTipoTelefone;
+    wAssinante.MinutosLocais          := StrToInt(edMinutosLocais.Text);
+    wAssinante.MinutosLocaisComercial := StrToInt(edMinutosHorarioComercial.Text);
+    wAssinante.MinutosInterurbanos    := fMinutoaInterUrbano;
+    wAssinante.ValorInterurbano       := fValorInterUrbano;
+    wAssinante.ServicosDespertador    := StrToInt(edServicoDespertador.Text);
+    wAssinante.NumeroTelegramas       := StrToInt(edTelegramas.Text);
+    wAssinante.ValorConta             := fValorConta;
 
 
     fListaAssinantes.Add(wAssinante);

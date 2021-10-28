@@ -1,9 +1,10 @@
 object frFormulario: TfrFormulario
   Left = 0
   Top = 0
+  Width = 571
+  Height = 576
+  AutoScroll = True
   Caption = 'Formul'#225'rio'
-  ClientHeight = 661
-  ClientWidth = 555
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

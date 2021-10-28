@@ -1,9 +1,10 @@
 object frPesquisa: TfrPesquisa
   Left = 0
   Top = 0
+  Width = 407
+  Height = 471
+  AutoScroll = True
   Caption = 'Sistema Pesquisa'
-  ClientHeight = 379
-  ClientWidth = 391
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
