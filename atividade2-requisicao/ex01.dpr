@@ -11,6 +11,6 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(TfrEnvioEmail, frEnvioEmail);
+//  Application.CreateForm(TfrEnvioEmail, frEnvioEmail);
   Application.Run;
 end.
