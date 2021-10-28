@@ -14,10 +14,13 @@ type
     procedure VerificarClick(Sender: TObject);
   private
     { Private declarations }
-    FHTTP  :  THTTPComCertificadoBase;
-    FTeste ,
-    FResult: String;
-    FContador : Integer;
+    FHTTP            :  THTTPComCertificadoBase;
+    FLink            ,
+    FResultLink      ,
+    FTextoLink       ,
+    FResultTextoLink : String;
+    FContador        ,
+    FTeste           : Integer;
     procedure OnVerificar(var prData: String);
   public
     { Public declarations }
@@ -32,27 +35,34 @@ implementation
 
 procedure TForm1.VerificarClick(Sender: TObject);
   begin
-    FContador := 0;
+    FContador := 2;
     try
       FHTTP := THTTPComCertificadoBase.Create(nil);
-      FHTTP.ProxyHost := '127.0.0.1';
-      FHTTP.ProxyPorta := 8888;
+      FHTTP.ProxyHost := '192.168.10.1';
+      FHTTP.ProxyPorta := 3128;
 
      FHTTP.OnAntesEnviarRequisicao := OnVerificar;
       try
         FHTTP.AbrirRequisicao('https://www.google.com/search?q=' + edEntrada.Text +'&rlz=1C1GCEU_pt-BRBR975BR975&oq=peixe&aqs=chrome.0.69i59j0i433i512j46i199i433i457i465i512j0i402j0i433i512j46i340i433i512j46i433i512j46i131i433i512j46i340i433i512j46i10i340i433.3671j1j7&sourceid=chrome&ie=UTF-8');
 
         FHTTP.EnviarRequisicao;
-        FTeste := Copy(FHTTP.ResponseText, Pos('class="yuRUbf"><a href="', FHTTP.ResponseText), MaxInt);
+        FLink := Copy(FHTTP.ResponseText, Pos('<div class="g"', FHTTP.ResponseText), MaxInt);
+        FLink := Copy(FLink, Pos('class="yuRUbf"><a href="', FLink), MaxInt);
 
-        while FContador < 3 do
+        while (FContador < 35) do
           begin
-            FResult := Copy(FTeste, Pos('"https:', FTeste), Pos('data-', fTeste));
-            FResult := Copy(FResult, Pos('"https:', FResult), Pos('data', FResult) - 1);
-            mmResult.Lines[FContador] := FResult;
+            FResultLink := Copy(FLink, Pos('"https:', FLink), Pos('data-', FLink));
+            FResultLink := Copy(FResultLink, Pos('"https:', FResultLink), Pos('data', FResultLink) - 1);
+            mmResult.Lines[FContador] := FResultLink;
             Inc(FContador);
-            Delete(FTeste, 1, FResult.Length);
-            FTeste := Copy(FTeste, Pos('class="yuRUbf"><a href="', FTeste), MaxInt);
+            FTextoLink  := Copy(FLink, Pos('<div class="VwiC3b yXK7lf MUxGbd yDYNvb lyLwlc lEBKkf"', FLink), MaxInt);
+            FTeste := Pos('/span', FTextoLink);
+            FResultTextoLink  := Copy(FTextoLink, (Pos('<span>', FTextoLink) + 6), Pos('></div>', FTextoLink));
+            FResultTextoLink  := Copy(FResultTextoLink, 1, Pos('</span>', FResultTextoLink) -1);
+            mmResult.Lines[FContador] := FResultTextoLink;
+            Inc(FContador,10);
+            Delete(FLink, 1, FResultLink.Length);
+            FLink := Copy(FLink, Pos('class="yuRUbf"><a href="', FLink), MaxInt);
           end;
 
       finally

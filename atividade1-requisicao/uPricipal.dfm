@@ -14,17 +14,17 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object edEntrada: TEdit
-    Left = 312
-    Top = 48
-    Width = 121
-    Height = 21
+    Left = 304
+    Top = 32
+    Width = 169
+    Height = 39
     TabOrder = 0
   end
   object Verificar: TButton
-    Left = 560
-    Top = 46
-    Width = 75
-    Height = 25
+    Left = 544
+    Top = 32
+    Width = 91
+    Height = 39
     Caption = 'Verificar'
     TabOrder = 1
     OnClick = VerificarClick
@@ -34,7 +34,43 @@ object Form1: TForm1
     Top = 96
     Width = 977
     Height = 570
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
     Lines.Strings = (
+      'Tr'#234's primeiros resultados do Google para a palavra digtada:'
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
       ''
       ''
       ''
@@ -85,6 +121,7 @@ object Form1: TForm1
       ''
       ''
       '')
+    ParentFont = False
     TabOrder = 2
   end
 end
