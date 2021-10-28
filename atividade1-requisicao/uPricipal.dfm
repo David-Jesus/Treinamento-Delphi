@@ -2,126 +2,64 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 674
-  ClientWidth = 1032
+  ClientHeight = 568
+  ClientWidth = 1183
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -13
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
   PixelsPerInch = 96
-  TextHeight = 13
-  object edEntrada: TEdit
-    Left = 304
-    Top = 32
-    Width = 169
-    Height = 39
-    TabOrder = 0
-  end
-  object Verificar: TButton
-    Left = 544
-    Top = 32
-    Width = 91
-    Height = 39
-    Caption = 'Verificar'
-    TabOrder = 1
-    OnClick = VerificarClick
-  end
-  object mmResult: TMemo
+  TextHeight = 16
+  object lbFundo: TLabel
     Left = 32
-    Top = 96
-    Width = 977
-    Height = 570
+    Top = 88
+    Width = 1121
+    Height = 449
+    AutoSize = False
+    Caption = 
+      'Tr'#234's primeiros resultados do google referente a palavra digitada' +
+      ': '
+    Color = clWhite
+    ParentColor = False
+    Transparent = False
+  end
+  object lbResultado: TLabel
+    Left = 64
+    Top = 168
+    Width = 1062
+    Height = 321
+    AutoSize = False
+    Color = clBtnHighlight
+    ParentColor = False
+    Transparent = False
+    WordWrap = True
+  end
+  object edEntrada: TEdit
+    AlignWithMargins = True
+    Left = 376
+    Top = 39
+    Width = 217
+    Height = 25
+    AutoSize = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = []
-    Lines.Strings = (
-      'Tr'#234's primeiros resultados do Google para a palavra digtada:'
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      ''
-      '')
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 0
+    TextHint = 'Digte uma palavra'
+  end
+  object Verificar: TButton
+    Left = 648
+    Top = 36
+    Width = 91
+    Height = 32
+    Caption = 'Verificar'
+    TabOrder = 1
+    OnClick = VerificarClick
   end
 end

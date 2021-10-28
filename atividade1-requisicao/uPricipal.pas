@@ -10,7 +10,8 @@ type
   TForm1 = class(TForm)
     edEntrada: TEdit;
     Verificar: TButton;
-    mmResult: TMemo;
+    lbResultado: TLabel;
+    lbFundo: TLabel;
     procedure VerificarClick(Sender: TObject);
   private
     { Private declarations }
@@ -18,7 +19,8 @@ type
     FLink            ,
     FResultLink      ,
     FTextoLink       ,
-    FResultTextoLink : String;
+    FResultTextoLink ,
+    FResultado       : String;
     FContador        ,
     FTeste           : Integer;
     procedure OnVerificar(var prData: String);
@@ -35,8 +37,11 @@ implementation
 
 procedure TForm1.VerificarClick(Sender: TObject);
   begin
-    FContador := 2;
+    FContador := 0;
+
     try
+      lbResultado.Caption := '';
+      FResultado := '';
       FHTTP := THTTPComCertificadoBase.Create(nil);
       FHTTP.ProxyHost := '192.168.10.1';
       FHTTP.ProxyPorta := 3128;
@@ -49,21 +54,23 @@ procedure TForm1.VerificarClick(Sender: TObject);
         FLink := Copy(FHTTP.ResponseText, Pos('<div class="g"', FHTTP.ResponseText), MaxInt);
         FLink := Copy(FLink, Pos('class="yuRUbf"><a href="', FLink), MaxInt);
 
-        while (FContador < 35) do
+        while (FContador < 3) do
           begin
             FResultLink := Copy(FLink, Pos('"https:', FLink), Pos('data-', FLink));
             FResultLink := Copy(FResultLink, Pos('"https:', FResultLink), Pos('data', FResultLink) - 1);
-            mmResult.Lines[FContador] := FResultLink;
+            FResultado := FResultado + FResultLink + #13 ;
             Inc(FContador);
+
             FTextoLink  := Copy(FLink, Pos('<div class="VwiC3b yXK7lf MUxGbd yDYNvb lyLwlc lEBKkf"', FLink), MaxInt);
-            FTeste := Pos('/span', FTextoLink);
             FResultTextoLink  := Copy(FTextoLink, (Pos('<span>', FTextoLink) + 6), Pos('></div>', FTextoLink));
             FResultTextoLink  := Copy(FResultTextoLink, 1, Pos('</span>', FResultTextoLink) -1);
-            mmResult.Lines[FContador] := FResultTextoLink;
-            Inc(FContador,10);
+
+            FResultado := FResultado + FResultTextoLink + #13#13#13;
             Delete(FLink, 1, FResultLink.Length);
             FLink := Copy(FLink, Pos('class="yuRUbf"><a href="', FLink), MaxInt);
           end;
+
+        lbResultado.Caption := FResultado;
 
       finally
         FHTTP.OnAntesEnviarRequisicao := nil;
