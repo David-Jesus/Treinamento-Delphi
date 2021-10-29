@@ -11,24 +11,27 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object Edit1: TEdit
-    Left = 114
-    Top = 120
-    Width = 177
-    Height = 21
-    AutoSelect = False
-    TabOrder = 0
-    TextHint = 'Informe o Cnpj'
-  end
   object btEnviar: TButton
     Left = 160
     Top = 168
     Width = 75
     Height = 25
     Caption = 'Enviar'
-    TabOrder = 1
+    TabOrder = 0
     OnClick = btEnviarClick
+  end
+  object mskCNPJ: TMaskEdit
+    Left = 106
+    Top = 117
+    Width = 176
+    Height = 21
+    Cursor = crIBeam
+    EditMask = '00.000.000/0000-00;1;_'
+    MaxLength = 18
+    TabOrder = 1
+    Text = '  .   .   /    -  '
   end
 end
