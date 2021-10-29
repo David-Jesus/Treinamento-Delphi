@@ -1,39 +1,46 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'C:\dwsci\classes\WinCrypt\uGestaoCertificados.pas',0,1,72,9,104,0,0,,
-File_1=TSourceModule,'C:\dwsci\util\uUtilUnificado.pas',0,1,79,112,21,0,0,,
-File_2=TSourceModule,'C:\dwsci\componentes\uAcessoExclusivo.pas',0,1,196,41,27,0,0,,
-File_3=TSourceModule,'C:\Users\progweb03\Desktop\Pedir Marmita\uPrincipal.pas',0,1,58,21,74,0,0,,
-File_4=TSourceModule,'c:\program files (x86)\embarcadero\studio\17.0\SOURCE\VCL\Vcl.Controls.pas',0,1,10060,1,10083,0,0,,
-File_5=TSourceModule,'c:\program files (x86)\embarcadero\studio\17.0\SOURCE\VCL\Vcl.StdCtrls.pas',0,1,5768,1,5789,0,0,{{1651,4}
-File_6=TSourceModule,'c:\program files (x86)\embarcadero\studio\17.0\source\rtl\common\System.Classes.pas',0,1,16861,1,16884,0,0,,
-File_7=TSourceModule,'c:\program files (x86)\embarcadero\studio\17.0\SOURCE\VCL\Vcl.Forms.pas',0,1,4434,1,4455,0,0,{{1729,4}
-File_8=TSourceModule,'C:\dwsci\classes\HTTPComCertificado\uHTTPComCertificadoBase.pas',0,1,94,4,32,0,0,,
-File_9=TSourceModule,'C:\Outros\PushSCI\PushSCIServico\uUtilPushSCIServico.pas',0,1,5502,1,5555,0,0,,
-File_10=TSourceModule,'C:\Outros\PushSCI\PushSCIServico\ServerContainerUnit.pas',0,1,1381,53,1389,0,0,{{164,0}
-File_11=TSourceModule,'C:\Outros\PushSCI\PushSCIServico\Threads\uClassesThreads.pas',0,1,1074,65,1099,0,0,,
-File_12=TSourceModule,'C:\Outros\PushSCI\PushSCIServico\Threads\uThreadAutomatizacaoSCIReportRelatorios.pas',0,1,254,61,275,0,0,,
-File_13=TSourceModule,'C:\Outros\PushSCI\Componentes\Internet\uHTTPBusca_MS_NFe.pas',0,1,625,113,653,0,0,{{285,0}
-File_14=TSourceModule,'C:\Outros\PushSCI\Componentes\Internet\uHTTPNFSeSaoJoseDosCampos.pas',0,1,1,1,1,0,0,,
+File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\17.0\SOURCE\VCL\Vcl.Controls.pas',0,1,7345,1,7366,0,0,,
+File_1=TSourceModule,'c:\program files (x86)\embarcadero\studio\17.0\SOURCE\VCL\Vcl.Forms.pas',0,1,3742,1,3763,0,0,{{1729,4}
+File_2=TSourceModule,'c:\program files (x86)\embarcadero\studio\17.0\SOURCE\RTL\SYS\System.pas',0,1,16190,1,16187,0,0,,
+File_3=TSourceModule,'C:\dwsci\classes\WinCrypt\uGestaoCertificados.pas',0,1,72,9,104,0,0,,
+File_4=TSourceModule,'C:\dwsci\util\uUtilUnificado.pas',0,1,79,112,21,0,0,,
+File_5=TSourceModule,'C:\dwsci\componentes\uAcessoExclusivo.pas',0,1,196,41,27,0,0,,
+File_6=TSourceModule,'C:\Users\progweb03\Desktop\Pedir Marmita\uPrincipal.pas',0,1,58,21,74,0,0,,
+File_7=TSourceModule,'c:\program files (x86)\embarcadero\studio\17.0\SOURCE\VCL\Vcl.StdCtrls.pas',0,1,5768,1,5789,0,0,{{1651,4}
+File_8=TSourceModule,'c:\program files (x86)\embarcadero\studio\17.0\source\rtl\common\System.Classes.pas',0,1,16861,1,16884,0,0,,
+File_9=TSourceModule,'C:\dwsci\classes\HTTPComCertificado\uHTTPComCertificadoBase.pas',0,1,94,4,32,0,0,,
+File_10=TSourceModule,'C:\Outros\PushSCI\PushSCIServico\uUtilPushSCIServico.pas',0,1,5502,1,5555,0,0,,
+File_11=TSourceModule,'C:\Outros\PushSCI\PushSCIServico\ServerContainerUnit.pas',0,1,1381,53,1389,0,0,{{164,0}
+File_12=TSourceModule,'C:\Outros\PushSCI\PushSCIServico\Threads\uClassesThreads.pas',0,1,1074,65,1099,0,0,,
+File_13=TSourceModule,'C:\Outros\PushSCI\PushSCIServico\Threads\uThreadAutomatizacaoSCIReportRelatorios.pas',0,1,254,61,275,0,0,,
+File_14=TSourceModule,'C:\Outros\PushSCI\Componentes\Internet\uHTTPBusca_MS_NFe.pas',0,1,625,113,653,0,0,{{285,0}
 
 [Modules]
-Module0=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\atividade2-requisicao\uPrincipal.pas
+Module0=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\atividade2-requisicao\uEnviaEmail.pas
 Module1=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\atividade2-requisicao\ex01.dproj
-Count=2
+Module2=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\atividade2-requisicao\uPrincipal.pas
+Count=3
 EditWindowCount=1
+
+[C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\atividade2-requisicao\uEnviaEmail.pas]
+ModuleType=TSourceModule
+FormState=1
+FormOnTop=1
+
+[C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\atividade2-requisicao\ex01.dproj]
+ModuleType=TBaseProject
 
 [C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\atividade2-requisicao\uPrincipal.pas]
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
-[C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\atividade2-requisicao\ex01.dproj]
-ModuleType=TBaseProject
-
 [EditWindow0]
-ViewCount=2
-CurrentEditView=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\atividade2-requisicao\uPrincipal.pas
+ViewCount=3
+CurrentEditView=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\atividade2-requisicao\uEnviaEmail.pas
 View0=0
 View1=1
+View2=2
 PercentageSizes=1
 Create=1
 Visible=1
@@ -66,9 +73,9 @@ BottomMiddelPanelData=0000080001020200000009000000446F636B5369746530100000004772
 [View0]
 CustomEditViewType=TEditView
 Module=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\atividade2-requisicao\uPrincipal.pas
-CursorX=12
-CursorY=56
-TopLine=25
+CursorX=50
+CursorY=32
+TopLine=19
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -76,9 +83,20 @@ EditViewName=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delph
 
 [View1]
 CustomEditViewType=TEditView
+Module=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\atividade2-requisicao\uEnviaEmail.pas
+CursorX=50
+CursorY=95
+TopLine=24
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=Borland.FormDesignerView
+
+[View2]
+CustomEditViewType=TEditView
 Module=C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\atividade2-requisicao\ex01.dpr
-CursorX=1
-CursorY=9
+CursorX=31
+CursorY=16
 TopLine=1
 LeftCol=1
 Elisions=
@@ -110,8 +128,7 @@ Dockable=1
 StayOnTop=0
 
 [Breakpoints]
-Count=1
-Breakpoint0='C:\Users\progweb03\Documents\David\GitHub - David\Treinamento-Delphi\atividade2-requisicao\uPrincipal.pas',49,'',0,1,'',1,0,0,'',1,'','','',0,''
+Count=0
 
 [EmbarcaderoWin32Debugger_AddressBreakpoints]
 Count=0
@@ -310,6 +327,11 @@ LRDockWidth=1896
 Dockable=1
 StayOnTop=0
 SplitPos=111
+
+[PropInspDesignerSelection]
+ArrangeBy=Name
+SelectedItem=Action,
+ExpandedItems=Anchors=0,BorderIcons=0,Constraints=0
 
 [frmDesignPreview]
 PercentageSizes=1

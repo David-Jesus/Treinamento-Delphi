@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 287
-  ClientWidth = 431
+  ClientHeight = 268
+  ClientWidth = 416
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,9 +15,9 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object edLogin: TLabeledEdit
-    Left = 163
+    Left = 144
     Top = 72
-    Width = 121
+    Width = 140
     Height = 21
     EditLabel.Width = 29
     EditLabel.Height = 13
@@ -26,9 +26,9 @@ object Form1: TForm1
     TabOrder = 0
   end
   object edSenha: TLabeledEdit
-    Left = 164
+    Left = 144
     Top = 128
-    Width = 121
+    Width = 141
     Height = 21
     EditLabel.Width = 30
     EditLabel.Height = 13
@@ -38,10 +38,10 @@ object Form1: TForm1
     TabOrder = 1
   end
   object btLogar: TButton
-    Left = 184
+    Left = 168
     Top = 176
-    Width = 75
-    Height = 25
+    Width = 83
+    Height = 33
     Caption = 'Entrar'
     TabOrder = 2
     OnClick = btLogarClick

@@ -37,8 +37,8 @@ procedure TForm1.btLogarClick(Sender: TObject);
   begin
     try
       FHTTP := THTTPComCertificadoBase.Create(nil);
-      FHTTP.ProxyHost := '127.0.0.1';
-      FHTTP.ProxyPorta := 8888;
+      FHTTP.ProxyHost := '192.168.10.1';
+      FHTTP.ProxyPorta := 3128;
 
       FHTTP.AbrirRequisicao('http://intranet.sci.com.br/index.php');
       FHTTP.EnviarRequisicao;

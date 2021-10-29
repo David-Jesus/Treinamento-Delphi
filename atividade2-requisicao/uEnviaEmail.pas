@@ -38,81 +38,83 @@ implementation
 
 procedure TfrEnvioEmail.btEnviarClick(Sender: TObject);
   begin
-  try
-      FHTTP.OnAntesEnviarRequisicao := OnLogado;
-      FHTTP.AbrirRequisicao('http://intranet.sci.com.br/cleanGrid.php?source=mailSend.php');
-      FHTTP.EnviarRequisicao;
-
-      FHTTP.OnAntesEnviarRequisicao := OnSelecionarColaborador;
-
-      //Requisição que abre a tela de seleção de pessoas
-      try
-        FHTTP.AbrirRequisicao('http://intranet.sci.com.br/selecionarColaborador.php?campo=destinatarios&form=mailForm');
-        FHTTP.EnviarRequisicao;
-      finally
-        FHTTP.OnAntesEnviarRequisicao := nil;
-      end;
-
-      FHTTP.OnAntesEnviarRequisicao := OnSeTFiltro;
-
-      //Reqquisição que faz a pesquisa pelo nome passado
-      try
-        FHTTP.AbrirRequisicao('http://intranet.sci.com.br/setFilter.php?novoMetodo=1', tprPOST);
-        FHTTP.EnviarRequisicao;
-
-        FTeste := Copy(FHTTP.ResponseText, Pos('david', FHTTP.ResponseText), Pos('david', FHTTP.ResponseText));
-        FTeste := Copy(FTeste, 1, Pos(',', FTeste)-2);
-
-      finally
-        FHTTP.OnAntesEnviarRequisicao := nil;
-      end;
-
-      FHTTP.OnAntesEnviarRequisicao := OnSelecionarPessoa;
-
-      //Requisição que seleciona a pessoa filtrada - checkbox que fica ao lado do nome
-      try
-        FHTTP.AbrirRequisicao('http://intranet.sci.com.br/setSessionFiltro.ajax.php', tprPOST);
-        FHTTP.EnviarRequisicao;
-      finally
-        FHTTP.OnAntesEnviarRequisicao := nil;
-      end;
-
-      FHTTP.OnAntesEnviarRequisicao := OnSalvarFiltro;
-
-      //Requisição que confirma a pessoa selecionada e seta o email que será enviado
-      try
-        FHTTP.AbrirRequisicao('http://intranet.sci.com.br/selecionarColaborador.php?acao=salvar');
-        FHTTP.EnviarRequisicao;
-      finally
-        FHTTP.OnAntesEnviarRequisicao := nil;
-      end;
-
-      FHTTP.OnAntesEnviarRequisicao := OnEnviarEmai;
-
-    finally
-
-    end;
-
     try
-      FHTTP.AbrirRequisicao('http://intranet.sci.com.br/mailSendDo.php', tprPOST);
-      FHTTP.EnviarRequisicao;
+        //Requisição para abrir a tela de envio de e-mail;
+        FHTTP.OnAntesEnviarRequisicao := OnLogado;
+        FHTTP.AbrirRequisicao('http://intranet.sci.com.br/cleanGrid.php?source=mailSend.php');
+        FHTTP.EnviarRequisicao;
 
-      FValidaEnvio := Copy(FHTTP.ResponseText, Pos('Mensagem enviada com Sucesso!!!', FHTTP.ResponseText), MaxInt);
+        FHTTP.OnAntesEnviarRequisicao := OnSelecionarColaborador;
 
-      if (FValidaEnvio.Length > 0) then
-         begin
-           ShowMessage('Email enviado com sucesso!');
-           Edit1.Text   := '';
-           edEmail.text := '';
-         end
+        //Requisição que abre a tela de seleção de pessoas
+        try
+          FHTTP.AbrirRequisicao('http://intranet.sci.com.br/selecionarColaborador.php?campo=destinatarios&form=mailForm');
+          FHTTP.EnviarRequisicao;
+        finally
+          FHTTP.OnAntesEnviarRequisicao := nil;
+        end;
 
-      else
-         ShowMessage('Erro ao encaminhar o e-mail!');
+        FHTTP.OnAntesEnviarRequisicao := OnSeTFiltro;
 
-    finally
-      FHTTP.OnAntesEnviarRequisicao := nil;
+        //Reqquisição que faz a pesquisa pelo nome
+        try
+          FHTTP.AbrirRequisicao('http://intranet.sci.com.br/setFilter.php?novoMetodo=1', tprPOST);
+          FHTTP.EnviarRequisicao;
+
+          FTeste := Copy(FHTTP.ResponseText, Pos('lucas', FHTTP.ResponseText), Pos('lucas', FHTTP.ResponseText));
+          FTeste := Copy(FTeste, 1, Pos(',', FTeste)-2);
+
+        finally
+          FHTTP.OnAntesEnviarRequisicao := nil;
+        end;
+
+        FHTTP.OnAntesEnviarRequisicao := OnSelecionarPessoa;
+
+        //Requisição que seleciona a pessoa filtrada - checkbox que fica ao lado do nome
+        try
+          FHTTP.AbrirRequisicao('http://intranet.sci.com.br/setSessionFiltro.ajax.php', tprPOST);
+          FHTTP.EnviarRequisicao;
+        finally
+          FHTTP.OnAntesEnviarRequisicao := nil;
+        end;
+
+        FHTTP.OnAntesEnviarRequisicao := OnSalvarFiltro;
+
+        //Requisição que confirma a pessoa selecionada e seta o email que será enviado
+        try
+          FHTTP.AbrirRequisicao('http://intranet.sci.com.br/selecionarColaborador.php?acao=salvar');
+          FHTTP.EnviarRequisicao;
+        finally
+          FHTTP.OnAntesEnviarRequisicao := nil;
+        end;
+
+        FHTTP.OnAntesEnviarRequisicao := OnEnviarEmai;
+
+      finally
+//        FHTTP.OnAntesEnviarRequisicao := nil;
+      end;
+
+      //Requisição que faz o envio do e-mail com as informações preenchidas nos imputs;
+      try
+        FHTTP.AbrirRequisicao('http://intranet.sci.com.br/mailSendDo.php', tprPOST);
+        FHTTP.EnviarRequisicao;
+
+        FValidaEnvio := Copy(FHTTP.ResponseText, Pos('Mensagem enviada com Sucesso!!!', FHTTP.ResponseText), MaxInt);
+
+        if (FValidaEnvio.Length > 0) then
+           begin
+             ShowMessage('Email enviado com sucesso!');
+             Edit1.Text   := '';
+             edEmail.text := '';
+           end
+
+        else
+           ShowMessage('Erro ao encaminhar o e-mail!');
+
+      finally
+        FHTTP.OnAntesEnviarRequisicao := nil;
+      end;
     end;
-  end;
 
 constructor TfrEnvioEmail.Create(prFHTTP: THTTPComCertificadoBase);
   begin
@@ -145,7 +147,6 @@ procedure TfrEnvioEmail.OnLogado(var prData: String);
 
 procedure TfrEnvioEmail.OnSeTFiltro(var prData: String);
   begin
-   //Chamar Primeiro
     FHTTP.SetaRequestHeader('Host', 'intranet.sci.com.br');
     FHTTP.SetaRequestHeader('Proxy-Connection', 'keep-alive');
     FHTTP.SetaRequestHeader('Cache-Control', 'max-age=0');
@@ -158,7 +159,7 @@ procedure TfrEnvioEmail.OnSeTFiltro(var prData: String);
     FHTTP.SetaRequestHeader('Accept-Language', 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7');
 
                                                              //Filtro por nome
-    prData := 'source=%2FselecionarColaborador.php&fCodigo=&fNome=David+de&fCidade=&uf=&depto=&fDataIni=&fTipo=&fGrupoUsuario=';
+    prData := 'source=%2FselecionarColaborador.php&fCodigo=&fNome=Lucas+Are&fCidade=&uf=&depto=&fDataIni=&fTipo=&fGrupoUsuario=';
   end;
 
 procedure TfrEnvioEmail.OnSelecionarPessoa(var prData: String);
@@ -178,7 +179,7 @@ procedure TfrEnvioEmail.OnSelecionarPessoa(var prData: String);
 
 procedure TfrEnvioEmail.OnSalvarFiltro(var prData: String);
   begin
-   //Após Selecionar o Filtro - Parâmetros para salvar a escolha -Confirmar
+   //Após Selecionar o Filtro - Parâmetros para salvar a escolha - Confirmar
     FHTTP.SetaRequestHeader('Host', 'intranet.sci.com.br');
     FHTTP.SetaRequestHeader('Proxy-Connection', 'keep-alive');
     FHTTP.SetaRequestHeader('Upgrade-Insecure-Requests', '1');
